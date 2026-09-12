@@ -1990,3 +1990,234 @@ body.architectural-canvas-body {
     }
 }
 
+
+
+
+
+/* ==========================================================================
+   BE NICE BEAUTY — ARCHITECTURAL PREMIUM FOOTER (PART 6)
+   ========================================================================== */
+.architectural-footer { 
+    background-color: var(--text-color) !important; /* Karbonfekete luxus-alap */
+    color: rgba(238, 242, 238, 0.6) !important; 
+    padding: 120px 0 50px 0 !important; 
+    width: 100% !important; 
+    border-top: 1px solid rgba(238, 242, 238, 0.08) !important; 
+}
+
+.footer-luxury-container { 
+    max-width: 1240px !important; 
+    margin: 0 auto !important; 
+    padding: 0 40px !important; 
+    width: 100% !important; 
+}
+
+/* NÉGYOSZLOPOS MONOLITH RÁCS (ASZTAL) */
+.footer-grid-monolith { 
+    display: grid !important; 
+    grid-template-columns: 1.8fr 1fr 1fr 1.2fr !important; 
+    gap: 60px !important; 
+    padding-bottom: 60px !important; 
+    border-bottom: 1px solid rgba(238, 242, 238, 0.08) !important; 
+}
+
+.footer-column { 
+    display: flex !important; 
+    flex-direction: column !important; 
+}
+
+.footer-column-heading { 
+    font-family: var(--font-sans) !important; 
+    font-size: 0.68rem !important; 
+    font-weight: 500 !important; 
+    text-transform: uppercase !important; 
+    letter-spacing: 3px !important; 
+    color: var(--white) !important; 
+    margin-bottom: 30px !important; 
+}
+
+.footer-logo-title { 
+    font-family: var(--font-serif) !important; 
+    font-size: 1.6rem !important; 
+    font-weight: 300 !important; 
+    letter-spacing: 4px !important; 
+    color: var(--white) !important; 
+    margin-bottom: 25px !important; 
+}
+
+.footer-brand-credo { 
+    font-family: var(--font-sans) !important;
+    font-size: 0.88rem !important; 
+    font-weight: 300 !important; 
+    line-height: 1.8 !important; 
+    color: rgba(238, 242, 238, 0.5) !important; 
+    margin-bottom: 30px !important; 
+    max-width: 290px !important; 
+}
+
+.footer-social-row { 
+    display: flex !important; 
+    gap: 20px !important; 
+    align-items: center !important;
+}
+
+.footer-icon-link { 
+    color: var(--white) !important; 
+    opacity: 0.5; 
+    transition: var(--transition) !important; 
+}
+
+.footer-icon-link:hover { 
+    opacity: 1 !important; 
+    color: var(--primary-color) !important; 
+    transform: translateY(-2px) !important; 
+}
+
+.footer-icon-link svg {
+    width: 100% !important;
+    height: 100% !important;
+    display: block !important;
+}
+
+/* Navigációs linkek listája */
+.footer-links-list { 
+    list-style: none !important; 
+    display: flex !important; 
+    flex-direction: column !important; 
+    gap: 15px !important; 
+}
+
+.footer-links-list a { 
+    text-decoration: none !important; 
+    font-family: var(--font-sans) !important;
+    font-size: 0.85rem !important; 
+    font-weight: 300 !important; 
+    color: rgba(238, 242, 238, 0.6) !important; 
+    transition: var(--transition) !important; 
+    display: inline-block !important; 
+}
+
+.footer-links-list a:hover { 
+    color: var(--white) !important; 
+    padding-left: 4px !important; 
+}
+
+/* Nyitvatartás lista */
+.footer-hours-list { 
+    list-style: none !important; 
+    display: flex !important; 
+    flex-direction: column !important; 
+    gap: 15px !important; 
+    font-family: var(--font-sans) !important;
+    font-size: 0.85rem !important; 
+    font-weight: 300 !important; 
+}
+
+.footer-hours-list li { 
+    display: flex !important; 
+    justify-content: space-between !important; 
+    align-items: center !important; 
+    border-bottom: 1px solid rgba(238, 242, 238, 0.04) !important; 
+    padding-bottom: 8px !important; 
+}
+
+/* Elérhetőségek oszlopa */
+.footer-contact-text { 
+    font-family: var(--font-sans) !important;
+    font-size: 0.85rem !important; 
+    font-weight: 300 !important; 
+    line-height: 1.7 !important; 
+    margin-bottom: 25px !important; 
+}
+
+.footer-phone-cta { 
+    font-family: var(--font-sans) !important; 
+    font-size: 0.75rem !important; 
+    font-weight: 500 !important; 
+    letter-spacing: 1.5px !important; 
+    color: var(--white) !important; 
+    text-decoration: none !important; 
+    border-bottom: 1px solid var(--primary-color) !important; 
+    padding-bottom: 4px !important; 
+    align-self: flex-start !important; 
+    transition: var(--transition) !important; 
+}
+
+.footer-phone-cta:hover { 
+    color: var(--primary-color) !important; 
+    border-bottom-color: var(--white) !important; 
+}
+
+/* Alsó jogi és Copyright sáv */
+.footer-copyright-strip { 
+    display: flex !important; 
+    justify-content: space-between !important; 
+    align-items: center !important; 
+    padding-top: 40px !important; 
+    font-family: var(--font-sans) !important;
+    font-size: 0.7rem !important; 
+    letter-spacing: 1.5px !important; 
+    color: rgba(238, 242, 238, 0.3) !important; 
+}
+
+.footer-legal-links { 
+    display: flex !important; 
+    gap: 30px !important; 
+}
+
+.footer-legal-links a { 
+    text-decoration: none !important; 
+    color: rgba(238, 242, 238, 0.3) !important; 
+    transition: var(--transition) !important; 
+}
+
+.footer-legal-links a:hover { 
+    color: var(--white) !important; 
+}
+
+/* ==========================================================================
+   GYÁRI RESPONSIVE MODUL — FOOTER TABLET & MOBIL ENGINE (1100PX ALATT)
+   ========================================================================== */
+@media (max-width: 1100px) {
+    .architectural-footer { padding: 80px 0 40px 0 !important; }
+    
+    /* Táblagépen kétoszlopos, jól szeparált rácsra váltunk */
+    .footer-grid-monolith { 
+        display: flex !important; 
+        flex-direction: row !important; 
+        flex-wrap: wrap !important; 
+        justify-content: space-between !important; 
+        gap: 50px 30px !important; 
+        padding-bottom: 40px !important; 
+    }
+    
+    .footer-column { 
+        width: calc(50% - 20px) !important; 
+    }
+}
+
+@media (max-width: 650px) {
+    .footer-luxury-container { padding-left: 20px !important; padding-right: 20px !important; }
+    
+    /* Okostelefonon steril, teljesen centrált függőleges láncra váltunk */
+    .footer-grid-monolith { display: block !important; width: 100% !important; padding-bottom: 35px !important; }
+    .footer-column { display: block !important; text-align: center !important; align-items: center !important; width: 100% !important; margin: 0 0 45px 0 !important; }
+    .footer-brand-credo { margin: 0 auto 25px auto !important; text-align: center !important; } 
+    .footer-social-row { justify-content: center !important; }
+    
+    .footer-column-heading { margin-bottom: 20px !important; }
+    .footer-links-list { align-items: center !important; }
+    
+    .footer-hours-list { width: 100% !important; max-width: 290px !important; margin: 0 auto !important; }
+    .footer-hours-list li { border-bottom: none !important; justify-content: space-between !important; padding-bottom: 6px !important; }
+    
+    .footer-phone-cta { align-self: center !important; margin: 0 auto !important; }
+    
+    /* Alsó strip sorbontása okostelefonon */
+    .footer-copyright-strip { display: block !important; text-align: center !important; padding-top: 30px !important; }
+    .footer-copyright-strip p { margin-bottom: 15px !important; text-align: center !important; }
+    .footer-legal-links { justify-content: center !important; gap: 20px !important; }
+}
+
+
+
