@@ -1292,4 +1292,152 @@ body.architectural-canvas-body {
 }
 
 
+/* ==========================================================================
+   BE NICE BEAUTY — CINEMATIC INFINITE WALL SZEKCIÓ (PART 6)
+   ========================================================================== */
+.infinite-reviews-marquee-section { 
+    padding: 120px 0; 
+    background-color: var(--primary-color) !important; /* Hivatalos zsályazöld selyemháttér */
+    width: 100%; 
+    overflow: hidden; 
+    border-top: 1px solid rgba(26, 34, 27, 0.1); 
+    border-bottom: 1px solid rgba(26, 34, 27, 0.1); 
+}
+
+.marquee-title-wrapper { 
+    text-align: center; 
+    margin-bottom: 50px; 
+}
+
+.marquee-mini-tag {
+    display: block !important;
+    font-family: var(--font-sans) !important;
+    font-size: 0.72rem !important;
+    font-weight: 500 !important;
+    letter-spacing: 4px !important;
+    color: var(--text-color) !important;
+    text-transform: uppercase !important;
+    margin-bottom: 15px !important;
+}
+
+.marquee-title-wrapper h2 {
+    font-family: var(--font-serif); 
+    font-size: 3.2rem; 
+    font-weight: 300; 
+    color: var(--white) !important;
+    letter-spacing: 0.5px;
+}
+
+/* VÉGTELENÍTETT SZALAG CSOMAGOLÓ */
+.marquee-infinite-container { 
+    width: 100%; 
+    display: flex; 
+    overflow: hidden; 
+    position: relative; 
+    padding: 20px 0; 
+}
+
+/* Folyékonyan mozgó sín, ami hajszálpontosan a tartalom fele után ismétel */
+.marquee-moving-track { 
+    display: flex; 
+    width: max-content; 
+    gap: 60px; 
+    animation: marqueeRun 28s infinite linear; 
+    will-change: transform; /* Előre szól a Safarinak, hogy hardveresen készítse elő a sínt */
+}
+
+.marquee-text-block { 
+    font-family: var(--font-serif); 
+    font-size: 1.65rem; 
+    font-style: italic; 
+    color: var(--white); 
+    white-space: nowrap; 
+    font-weight: 300; 
+    display: flex;
+    align-items: center;
+}
+
+.marquee-text-block strong { 
+    color: var(--text-color); 
+    font-weight: 500; 
+    font-style: normal; 
+    font-size: 1.15rem; 
+    font-family: var(--font-sans); 
+    margin-left: 15px; 
+    letter-spacing: 0.5px;
+}
+
+/* AZ ATOMBIZTOS FILMES FUTÁSI TENGELY KEYFRAME MATRICA */
+@keyframes marqueeRun { 
+    0% { transform: translate3d(0, 0, 0); } 
+    100% { transform: translate3d(-50%, 0, 0); } /* Hajszálpontosan a sín felénél ugrik vissza láthatatlanul */
+}
+
+/* ==========================================================================
+   GYÁRI RESPONSIVE MODUL — MARQUEE TABLET & MOBIL ENGINE (1100PX ALATT)
+   ========================================================================== */
+@media (max-width: 1100px) {
+    .infinite-reviews-marquee-section {
+        padding: 90px 0 !important;
+    }
+    
+    .marquee-title-wrapper h2 {
+        font-size: 2.4rem !important;
+    }
+
+    .marquee-text-block { 
+        font-size: 1.35rem !important; 
+    }
+    
+    .marquee-text-block strong {
+        font-size: 0.95rem !important;
+        margin-left: 10px !important;
+    }
+}
+
+@media (max-width: 650px) {
+    .infinite-reviews-marquee-section {
+        padding: 70px 0 !important;
+    }
+
+    .marquee-title-wrapper h2 {
+        font-size: 1.85rem !important;
+        line-height: 1.3 !important;
+    }
+    
+    .marquee-title-wrapper {
+        margin-bottom: 35px !important;
+        padding: 0 20px !important;
+    }
+
+    /* Okostelefonon egy lehelettel felgyorsítjuk a futást, mert a kisebb betűk hamarabb lefutnak */
+    .marquee-moving-track { 
+        animation: marqueeRun 22s infinite linear; 
+        gap: 40px;
+    }
+
+    .marquee-text-block { 
+        font-size: 1.2rem !important; 
+    }
+    
+    .marquee-text-block strong {
+        font-size: 0.85rem !important;
+    }
+}
+
+/* ==========================================================================
+   EXCLUSIVE HARDWARE APPLE GRAPHICS ENGINE — SAFARI PRO MAX SPEED
+   ========================================================================== */
+@media (max-width: 1100px) {
+    /* Az iPhone 15 Pro Max videóchipjét (GPU) kényszerítjük a szalag sima futtatására */
+    .marquee-moving-track {
+        -webkit-transform: translate3d(0, 0, 0) !important;
+        transform: translate3d(0, 0, 0) !important;
+        -webkit-backface-visibility: hidden !important;
+        backface-visibility: hidden !important;
+    }
+}
+
+
+
 
