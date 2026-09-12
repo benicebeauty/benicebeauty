@@ -1129,3 +1129,167 @@ body.architectural-canvas-body {
 }
 
 
+
+/* ==========================================================================
+   BE NICE BEAUTY — THE EXHIBITION MONOGRAPH SZEKCIÓ (PART 5)
+   ========================================================================== */
+.museum-monograph-section { 
+    padding: 140px 20px; 
+    background-color: var(--bg-color) !important; 
+    width: 100%; 
+}
+
+.museum-monograph-container { 
+    max-width: 850px; 
+    margin: 0 auto; 
+}
+
+/* Fenséges, steril papírtömb doboz asztalon */
+.monograph-paper-block { 
+    padding: 75px 65px; 
+    background-color: var(--white); 
+    border: 1px solid rgba(163, 180, 164, 0.15); 
+    box-shadow: 0 25px 55px rgba(26, 34, 27, 0.02); 
+}
+
+.monograph-header-decor { 
+    font-size: 1.4rem; 
+    color: var(--primary-color); 
+    text-align: center; 
+    margin-bottom: 20px; 
+}
+
+.monograph-tag {
+    display: block !important;
+    font-family: var(--font-sans) !important;
+    font-size: 0.72rem !important;
+    font-weight: 500 !important;
+    letter-spacing: 3px !important;
+    color: var(--primary-color) !important;
+    text-transform: uppercase !important;
+    text-align: center !important;
+    margin-bottom: 15px !important;
+}
+
+.museum-monograph-container h2 { 
+    font-family: var(--font-serif); 
+    font-size: 3rem; 
+    font-weight: 300; 
+    line-height: 1.2;
+    text-align: center; 
+    margin-bottom: 45px; 
+    color: var(--text-color); 
+    letter-spacing: 0.5px;
+}
+
+.monograph-prose p { 
+    font-family: var(--font-sans) !important;
+    font-size: 0.98rem !important; 
+    font-weight: 300; 
+    color: #3c473d; 
+    line-height: 1.8; 
+    margin-bottom: 25px; 
+    text-align: center; 
+}
+
+/* 
+   MEGÚJULT IDÉZET-KORREKCIÓ:
+   Edit Balla küldetés-nyilatkozata megkapja az arculatodhoz illő, fenséges
+   12%-os zsályazöld selyemháttér-kiemelést és a vastag klinikai márkavonalat.
+*/
+.monograph-prose-quote { 
+    font-family: var(--font-serif) !important; 
+    font-size: 1.6rem !important; 
+    font-style: italic !important; 
+    color: var(--text-color) !important; 
+    background-color: rgba(163, 180, 164, 0.12) !important; /* 12%-os tiszta márkaszín */
+    border-left: 4px solid var(--primary-color) !important;
+    padding: 35px 30px !important; /* Tágas, kényelmes belső térköz */
+    text-align: left !important; 
+    margin: 40px 0 !important; 
+    line-height: 1.5 !important; 
+    border-radius: 0 4px 4px 0;
+    box-shadow: 0 10px 30px rgba(163, 180, 164, 0.04) !important;
+}
+
+/* Személyes, magazin szintű aláírás-doboz */
+.monograph-signature-box { 
+    margin-top: 55px; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    gap: 5px; 
+}
+
+.sig-name { 
+    font-family: var(--font-serif); 
+    font-size: 1.8rem; 
+    font-style: italic; 
+    color: var(--text-color); 
+}
+
+.sig-title { 
+    font-family: var(--font-sans);
+    font-size: 0.68rem; 
+    color: var(--primary-color); 
+    letter-spacing: 2px; 
+    text-transform: uppercase; 
+    font-weight: 500;
+}
+
+/* ==========================================================================
+   GYÁRI RESPONSIVE MODUL — MONOGRAPH TABLET & MOBIL ENGINE (1100PX ALATT)
+   ========================================================================== */
+@media (max-width: 1100px) {
+    .museum-monograph-section {
+        padding: 100px 30px !important;
+    }
+    .museum-monograph-container h2 {
+        font-size: 2.4rem !important;
+    }
+    .monograph-paper-block {
+        padding: 55px 45px !important;
+    }
+}
+
+@media (max-width: 650px) {
+    .museum-monograph-section {
+        padding: 60px 20px !important;
+    }
+    
+    .monograph-paper-block { 
+        padding: 40px 20px !important; 
+    } 
+    
+    .museum-monograph-container h2 {
+        font-size: 1.85rem !important;
+        line-height: 1.3 !important;
+        margin-bottom: 30px !important;
+    }
+
+    .monograph-prose p { 
+        font-size: 0.88rem !important; 
+        line-height: 1.65 !important; 
+        margin-bottom: 20px !important;
+    }
+    
+    /* Mobil ujjbegy-arányos idézet-doboz kiigazítás */
+    .monograph-prose-quote { 
+        font-size: 1.3rem !important; 
+        line-height: 1.5 !important;
+        margin: 30px 0 !important; 
+        padding: 25px 20px !important; 
+        border-left: 3px solid var(--primary-color) !important; 
+    }
+    
+    .monograph-signature-box {
+        margin-top: 40px !important;
+    }
+    
+    .sig-name {
+        font-size: 1.6rem !important;
+    }
+}
+
+
+
