@@ -674,3 +674,235 @@ body.architectural-canvas-body {
         content: "" !important;
     }
 }
+
+
+
+
+/* ==========================================================================
+   BE NICE BEAUTY — THE CORE TREATMENT BOOK (PART 3)
+   ========================================================================== */
+.linear-grid-section {
+    padding: 140px 0;
+    background-color: var(--bg-color) !important;
+    width: 100%;
+}
+
+.linear-grid-section .container-fluid-luxury {
+    max-width: 1240px !important;
+    margin: 0 auto !important;
+    padding: 0 40px !important;
+    width: 100% !important;
+}
+
+.editorial-header {
+    text-align: center;
+    margin-bottom: 70px;
+}
+
+.bar-subtitle {
+    display: block;
+    font-family: var(--font-sans);
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 4px;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+.bar-title {
+    font-family: var(--font-serif);
+    font-size: 3.2rem;
+    font-weight: 300;
+    color: var(--text-color);
+}
+
+.bar-accent-line {
+    width: 35px;
+    height: 1px;
+    background-color: var(--primary-color);
+    margin: 25px auto 0;
+}
+
+/* --- NÉGYHASÁBOS FEGYELMEZETT MAGAZINRÁCS (ASZTAL) --- */
+.clean-4card-grid {
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 35px !important;
+    width: 100% !important;
+}
+
+/* 
+   EGYSÉGESÍTETT PRÉMIUM LUXUS-KÁRTYA REFORM:
+   Kisöpörjük az Apple-fojtó elmosásokat, helyette pillekönnyű 12%-os 
+   zsályazöld selyem hátteret és bal oldali orvosi márkacsíkot kapnak a dobozok.
+*/
+.clean-luxury-card {
+    position: relative !important;
+    background-color: rgba(163, 180, 164, 0.12) !important; /* 12%-os krémes zsálya selyemháttér */
+    border: 1px solid rgba(163, 180, 164, 0.35) !important;
+    border-left: 4px solid #a3b4a4 !important; /* Határozott klinikai zárt vonal a bal szélen */
+    border-radius: 4px !important;
+    padding: 35px 25px !important; /* Biztonságos magazin belső térköz */
+    display: flex !important;
+    flex-direction: column !important;
+    box-sizing: border-box !important;
+    box-shadow: 0 4px 20px rgba(163, 180, 164, 0.02) !important;
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.3, 1),
+                background-color 0.4s ease,
+                border-color 0.4s ease,
+                box-shadow 0.4s cubic-bezier(0.25, 1, 0.3, 1) !important;
+}
+
+/* Hover reakció asztalon: Érintésre a kártya fenségesen kivilágosodik tiszta alabástrommá */
+.clean-luxury-card:hover {
+    transform: translate(8px, -4px) !important; /* Finom átlós emelkedés elcsúszás nélkül */
+    background-color: rgba(253, 252, 251, 0.99) !important; /* Sugárzó, telt alabástrom tónus */
+    border-color: rgba(163, 180, 164, 0.7) !important;
+    box-shadow: 0 15px 35px rgba(163, 180, 164, 0.12) !important;
+}
+
+.slate-img-frame {
+    width: 100% !important;
+    height: 220px !important;
+    overflow: hidden !important;
+    margin-bottom: 25px !important;
+    border: 1px solid rgba(163, 180, 164, 0.25) !important;
+    border-radius: 2px !important;
+}
+
+.slate-img-frame img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    display: block !important;
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1) !important;
+}
+
+.clean-luxury-card:hover .slate-img-frame img {
+    transform: scale(1.03) !important; /* Lebegéskor a kép minimálisan lélegzik, tágul */
+}
+
+.clean-luxury-card h3 {
+    font-family: var(--font-serif) !important;
+    font-size: 1.45rem !important;
+    font-weight: 400 !important;
+    color: var(--text-color) !important;
+    letter-spacing: 0.3px !important;
+    line-height: 1.3 !important;
+    margin-bottom: 12px !important;
+}
+
+.clean-luxury-card p {
+    font-family: var(--font-sans) !important;
+    font-size: 0.88rem !important;
+    font-weight: 300 !important;
+    color: #555e5b !important;
+    line-height: 1.65 !important;
+    margin-bottom: 25px !important;
+    flex-grow: 1 !important; /* Kitölti a teret, hogy a gombok egy vonalba essenek */
+}
+
+/* Unfold Prices gomb magazin stílusú formázása */
+.slate-action-btn {
+    align-self: flex-start !important;
+    display: inline-block !important;
+    text-decoration: none !important;
+    font-family: var(--font-sans) !important;
+    font-size: 0.68rem !important;
+    font-weight: 500 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 2px !important;
+    color: var(--text-color) !important;
+    padding-bottom: 2px !important;
+    border-bottom: 1px solid var(--accent-color) !important;
+    background: transparent !important;
+    transition: color 0.3s ease, border-bottom-color 0.3s ease, letter-spacing 0.3s ease !important;
+}
+
+.clean-luxury-card:hover .slate-action-btn {
+    color: var(--primary-color) !important;
+    border-bottom-color: var(--primary-color) !important;
+    letter-spacing: 2.5px !important; /* Finoman megnyúlik a nyíl a gomb végén */
+}
+
+/* ==========================================================================
+   GYÁRI RESPONSIVE MODUL — TREATMENTS TABLET & MOBIL ENGINE (1100PX ALATT)
+   ========================================================================== */
+@media (max-width: 1100px) {
+    .linear-grid-section {
+        padding: 100px 0 !important;
+    }
+    
+    .linear-grid-section .container-fluid-luxury {
+        padding-left: 30px !important;
+        padding-right: 30px !important;
+    }
+
+    .bar-title {
+        font-size: 2.4rem !important;
+    }
+
+    /* Kéthasábos elrendezésre váltunk táblagépen */
+    .clean-4card-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 40px 30px !important;
+    }
+}
+
+@media (max-width: 650px) {
+    .linear-grid-section .container-fluid-luxury {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
+
+    .bar-title {
+        font-size: 1.85rem !important;
+        line-height: 1.3 !important;
+    }
+
+    /* Egyhasábos, steril függőleges lista okostelefonon az ujjkényelemért */
+    .clean-4card-grid {
+        grid-template-columns: 1fr !important;
+        gap: 30px !important;
+    }
+
+    .clean-luxury-card {
+        padding: 30px 20px !important;
+        transform: none !important; /* Mobilon letiltjuk az eltolást az ujjgörgetés védelmében */
+    }
+
+    .clean-luxury-card:hover {
+        transform: none !important;
+        background-color: rgba(163, 180, 164, 0.12) !important; /* Mobilon fix marad a selyemzöld a kontrasztért */
+        box-shadow: 0 4px 20px rgba(163, 180, 164, 0.02) !important;
+    }
+
+    .slate-img-frame {
+        height: 180px !important;
+        margin-bottom: 20px !important;
+    }
+
+    .clean-luxury-card h3 {
+        font-size: 1.35rem !important;
+    }
+    
+    .slate-action-btn {
+        align-self: center !important; /* Mobilon középre igazodik az ujjbegyekhez */
+        margin-top: 5px !important;
+    }
+}
+
+/* ==========================================================================
+   EXCLUSIVE HARDWARE APPLE GRAPHICS ENGINE — SAFARI PRO MAX SPEED
+   ========================================================================== */
+@media (max-width: 1100px) {
+    /* Aktiváljuk az iPhone 15 Pro Max videóchipjét a kártyák vajpuha mobilgörgetéséért */
+    .clean-luxury-card {
+        -webkit-transform: translate3d(0, 0, 0) !important;
+        transform: translate3d(0, 0, 0) !important;
+        -webkit-backface-visibility: hidden !important;
+        backface-visibility: hidden !important;
+    }
+}
+
