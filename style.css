@@ -2221,3 +2221,111 @@ body.architectural-canvas-body {
 
 
 
+
+
+
+
+
+/* ==========================================================================
+   BE NICE BEAUTY — INTERACTIVE SCROLL REVEAL ENGINE (A FÁJL VÉGE)
+   ========================================================================== */
+
+/* --- 1. HERO SZEKCIÓ (Ez betöltéskor azonnal indul, nem vár a görgetésre) --- */
+.linear-hero-text {
+    opacity: 0;
+    transform: translate3d(0, 20px, 0);
+    animation: luxuryPureLift 1.4s cubic-bezier(0.25, 1, 0.3, 1) forwards;
+    animation-delay: 0.1s;
+}
+
+.linear-hero-graphic {
+    opacity: 0;
+    transform: translate3d(20px, 0, 0);
+    animation: luxuryRightSlide 1.6s cubic-bezier(0.25, 1, 0.3, 1) forwards;
+    animation-delay: 0.25s;
+}
+
+/* --- 2. GÖRDÜLÉSRE REAGÁLÓ SZEKCIÓK ALAPHELYZETE (ZÁRT, REJTETT) --- */
+.linear-grid-section, 
+.premium-services-section-old, 
+.museum-monograph-section, 
+.journal-content-section {
+    opacity: 0;
+    transform: translate3d(0, 30px, 0);
+    transition: opacity 1.4s cubic-bezier(0.25, 1, 0.3, 1), transform 1.4s cubic-bezier(0.25, 1, 0.3, 1) !important;
+    will-change: opacity, transform;
+}
+
+/* --- 3. AKTIÍV REVEALED ÁLLAPOT (Amikor a görgetés eléri az adott szekciót) --- */
+.linear-grid-section.revealed, 
+.premium-services-section-old.revealed, 
+.museum-monograph-section.revealed, 
+.journal-content-section.revealed {
+    opacity: 1 !important;
+    transform: translate3d(0, 0, 0) !important;
+}
+
+/* Lépcsőzetes belső kártyabeúszások a Treatments szekción belül, ha az már aktív */
+.linear-grid-section.revealed .clean-4card-grid .clean-luxury-card {
+    opacity: 0;
+    animation: luxuryPureLift 1.2s cubic-bezier(0.25, 1, 0.3, 1) forwards;
+}
+.linear-grid-section.revealed .clean-4card-grid .clean-luxury-card:nth-child(1) { animation-delay: 0.1s; }
+.linear-grid-section.revealed .clean-4card-grid .clean-luxury-card:nth-child(2) { animation-delay: 0.25s; }
+.linear-grid-section.revealed .clean-4card-grid .clean-luxury-card:nth-child(3) { animation-delay: 0.4s; }
+.linear-grid-section.revealed .clean-4card-grid .clean-luxury-card:nth-child(4) { animation-delay: 0.55s; }
+
+/* Lépcsőzetes belső hasábbeúszások az Our Services szekción belül, ha az már aktív */
+.premium-services-section-old.revealed .luxury-intro-column-old {
+    opacity: 0;
+    animation: luxuryLeftSlide 1.4s cubic-bezier(0.25, 1, 0.3, 1) forwards;
+    animation-delay: 0.1s;
+}
+.premium-services-section-old.revealed .editorial-service-item-old {
+    opacity: 0;
+    animation: luxuryPureLift 1.2s cubic-bezier(0.25, 1, 0.3, 1) forwards;
+}
+.premium-services-section-old.revealed .editorial-service-item-old:nth-child(1) { animation-delay: 0.2s; }
+.premium-services-section-old.revealed .editorial-service-item-old:nth-child(2) { animation-delay: 0.35s; }
+.premium-services-section-old.revealed .editorial-service-item-old:nth-child(3) { animation-delay: 0.5s; }
+
+/* Monográfia papírtömb belső finom tágulása gördüléskor */
+.museum-monograph-section.revealed .monograph-paper-block {
+    opacity: 0;
+    animation: luxuryPureExpand 1.5s cubic-bezier(0.25, 1, 0.3, 1) forwards;
+    animation-delay: 0.1s;
+}
+
+/* --- GLÓBÁLIS REVEAL KEYFRAMES --- */
+@keyframes luxuryPureLift {
+    from { opacity: 0; transform: translate3d(0, 25px, 0); }
+    to { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+
+@keyframes luxuryLeftSlide {
+    from { opacity: 0; transform: translate3d(-30px, 0, 0); }
+    to { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+
+@keyframes luxuryRightSlide {
+    from { opacity: 0; transform: translate3d(30px, 0, 0); }
+    to { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+
+@keyframes luxuryPureExpand {
+    from { opacity: 0; transform: translate3d(0, 15px, 0) scale(0.99); }
+    to { opacity: 1; transform: translate3d(0, 0, 0) scale(1); }
+}
+
+/* --- HARDVERES APPLE GPU RECOVERY BIZTONSÁGI ÖV --- */
+@media (max-width: 1100px) {
+    .linear-hero-text, .linear-hero-graphic, 
+    .clean-4card-grid .clean-luxury-card, 
+    .luxury-intro-column-old, .editorial-service-item-old, 
+    .monograph-paper-block, .inkless-main-flex-grid {
+        -webkit-backface-visibility: hidden !important;
+        backface-visibility: hidden !important;
+        -webkit-perspective: 1000px !important;
+        perspective: 1000px !important;
+    }
+}
