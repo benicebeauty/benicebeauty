@@ -419,7 +419,7 @@ body.architectural-canvas-body {
 
 
 /* ==========================================================================
-   BE NICE BEAUTY — FITZROVIA HERO SECTION ENGINE (PART 2 — STYLED BUTTON)
+   BE NICE BEAUTY — FITZROVIA HERO SECTION ENGINE (PART 2 — ANIMATED ELLIPSE)
    ========================================================================== */
 .hero-linear-section {
     width: 100%;
@@ -445,7 +445,7 @@ body.architectural-canvas-body {
     position: relative;
     z-index: 5;
     padding-bottom: 60px !important; /* Teret biztosít a konténer alján ülő asztali gombnak */
-}
+} cleavage
 
 /* --- BAL OLDALI TIPOGRÁFIAI OSZLOP --- */
 .linear-hero-text {
@@ -490,11 +490,6 @@ body.architectural-canvas-body {
     margin-bottom: 45px !important;
 }
 
-/* 
-   MEGÚJULT LUXUS CTA GOMB PROTOKOLL:
-   Az 'Our Services Menu' gomb tiszta, fenséges, high-end magazin formázást kapott,
-   amely tökéletesen rímel a Be Nice márkaarculat luxus hangulatára.
-*/
 .exhibition-btn-primary {
     align-self: flex-start !important;
     display: inline-block !important;
@@ -505,16 +500,15 @@ body.architectural-canvas-body {
     text-transform: uppercase !important;
     letter-spacing: 2px !important;
     white-space: nowrap !important;
-    background-color: var(--white) !important; /* Ragyogó alabástrom felület */
+    background-color: var(--white) !important;
     color: var(--text-color) !important;
-    padding: 16px 36px !important; /* Szellős, fenséges ujjbegy-párnázás */
+    padding: 16px 36px !important;
     border: 1px solid rgba(163, 180, 164, 0.2) !important;
     box-shadow: 0 12px 30px rgba(26, 34, 27, 0.05) !important;
     margin-top: 15px !important;
     transition: background-color 0.4s ease, color 0.4s ease, box-shadow 0.4s ease, transform 0.4s ease !important;
 }
 
-/* Hover reakció asztalon: Átvált steril, mély klinikai tónusra */
 .exhibition-btn-primary:hover {
     background-color: var(--text-color) !important;
     color: var(--white) !important;
@@ -544,15 +538,17 @@ body.architectural-canvas-body {
     display: block !important;
 }
 
-/* --- 2. ASZTALI KÖZÉPSŐ ELLIPSZIS GOMB MECHANIKA --- */
+/* ==========================================================================
+   BE NICE BEAUTY — HERO ELLIPSZIS GOMB TÁGULÁS JAVÍTÁS (A FÁJL MEGFELELŐ RÉSZE)
+   ========================================================================== */
+
 .desktop-hero-ellipse-btn {
     display: flex !important;
     justify-content: center !important;
     align-items: center !important;
     position: absolute !important;
-    bottom: -30px !important; /* Hajszálpontosan a konténer aljára ül rá, félig kilógva */
+    bottom: -30px !important; /* Hajszálpontosan a konténer alján ül, félig kilógva */
     left: 50% !important;
-    transform: translateX(-50%) !important;
     width: 140px !important;
     height: 62px !important;
     border-radius: 50% / 50% !important; /* Tökéletes luxus ellipszis alak */
@@ -569,15 +565,59 @@ body.architectural-canvas-body {
     box-shadow: 0 15px 35px rgba(26, 34, 27, 0.08) !important;
     border: 1px solid rgba(163, 180, 164, 0.2) !important;
     z-index: 100 !important;
-    transition: background-color 0.4s ease, color 0.4s ease, box-shadow 0.4s ease, transform 0.4s ease !important;
+    
+    /* 
+       A JAVÍTÁS CORE MECHANIKÁJA:
+       Nem teszünk ide scale-t és fontos jelzést, hogy az animáció 
+       szabadon, fagyásmentesen ki tudja tágítani a gombot!
+    */
+    opacity: 0;
+    -webkit-animation: ellipsePureExpand 1.5s cubic-bezier(0.25, 1, 0.5, 1) forwards !important;
+    animation: ellipsePureExpand 1.5s cubic-bezier(0.25, 1, 0.5, 1) forwards !important;
+    will-change: opacity, transform;
 }
 
+/* 
+   GOLYÓÁLLÓ IDŐZÍTETT TÁGULÁSI SÍN:
+   A scale(0.1) értéket csak a 'from' lépésbe zárjuk be, így a Safari 
+   és a Chrome is kötelezően végrehajtja a kicsiből nagyra növekedést!
+*/
+@-webkit-keyframes ellipsePureExpand {
+    from {
+        opacity: 0;
+        -webkit-transform: translate3d(-50%, 0, 0) scale(0.1);
+        transform: translate3d(-50%, 0, 0) scale(0.1);
+    }
+    to {
+        opacity: 1;
+        -webkit-transform: translate3d(-50%, 0, 0) scale(1.0);
+        transform: translate3d(-50%, 0, 0) scale(1.0); /* Gyönyörűen kitágul a teljes luxus méretére */
+    }
+}
+
+@keyframes ellipsePureExpand {
+    from {
+        opacity: 0;
+        -webkit-transform: translate3d(-50%, 0, 0) scale(0.1);
+        transform: translate3d(-50%, 0, 0) scale(0.1);
+    }
+    to {
+        opacity: 1;
+        -webkit-transform: translate3d(-50%, 0, 0) scale(1.0);
+        transform: translate3d(-50%, 0, 0) scale(1.0);
+    }
+}
+
+/* Hover interakció: Biztonságosan, a -50%-os középpontot megtartva reagál az ujjbegyekre */
 .desktop-hero-ellipse-btn:hover {
     background-color: var(--text-color) !important;
     color: var(--white) !important;
     box-shadow: 0 10px 25px rgba(26, 34, 27, 0.1) !important;
-    transform: translateX(-50%) scale(0.95) !important;
+    -webkit-transform: translate3d(-50%, 0, 0) scale(0.95) !important;
+    transform: translate3d(-50%, 0, 0) scale(0.95) !important;
+    transition: background-color 0.4s ease, color 0.4s ease, box-shadow 0.4s ease, transform 0.4s ease !important;
 }
+
 
 /* Szigorúan elrejtjük a mobil gombot asztali nézetben */
 .mobile-hero-floating-btn {
@@ -607,7 +647,7 @@ body.architectural-canvas-body {
     }
 
     .exhibition-btn-primary {
-        align-self: center !important; /* Középre húzza a gombot mobilon */
+        align-self: center !important;
         margin-top: 25px !important;
     }
 
@@ -631,7 +671,6 @@ body.architectural-canvas-body {
         display: none !important;
     }
 
-    /* MOBIL FLOATING GOMB PROTOKOLL */
     .mobile-hero-floating-btn {
         display: flex !important;
         justify-content: center !important;
@@ -739,25 +778,30 @@ body.architectural-canvas-body {
 */
 .clean-luxury-card {
     position: relative !important;
-    background-color: rgba(163, 180, 164, 0.12) !important; /* 12%-os krémes zsálya selyemháttér */
+    background-color: rgba(163, 180, 164, 0.12) !important;
+    /* 12%-os krémes zsálya selyemháttér */
     border: 1px solid rgba(163, 180, 164, 0.35) !important;
-    border-left: 4px solid #a3b4a4 !important; /* Határozott klinikai zárt vonal a bal szélen */
+    border-left: 4px solid #a3b4a4 !important;
+    /* Határozott klinikai zárt vonal a bal szélen */
     border-radius: 4px !important;
-    padding: 35px 25px !important; /* Biztonságos magazin belső térköz */
+    padding: 35px 25px !important;
+    /* Biztonságos magazin belső térköz */
     display: flex !important;
     flex-direction: column !important;
     box-sizing: border-box !important;
     box-shadow: 0 4px 20px rgba(163, 180, 164, 0.02) !important;
     transition: transform 0.4s cubic-bezier(0.25, 1, 0.3, 1),
-                background-color 0.4s ease,
-                border-color 0.4s ease,
-                box-shadow 0.4s cubic-bezier(0.25, 1, 0.3, 1) !important;
+        background-color 0.4s ease,
+        border-color 0.4s ease,
+        box-shadow 0.4s cubic-bezier(0.25, 1, 0.3, 1) !important;
 }
 
 /* Hover reakció asztalon: Érintésre a kártya fenségesen kivilágosodik tiszta alabástrommá */
 .clean-luxury-card:hover {
-    transform: translate(8px, -4px) !important; /* Finom átlós emelkedés elcsúszás nélkül */
-    background-color: rgba(253, 252, 251, 0.99) !important; /* Sugárzó, telt alabástrom tónus */
+    transform: translate(8px, -4px) !important;
+    /* Finom átlós emelkedés elcsúszás nélkül */
+    background-color: rgba(253, 252, 251, 0.99) !important;
+    /* Sugárzó, telt alabástrom tónus */
     border-color: rgba(163, 180, 164, 0.7) !important;
     box-shadow: 0 15px 35px rgba(163, 180, 164, 0.12) !important;
 }
@@ -780,7 +824,8 @@ body.architectural-canvas-body {
 }
 
 .clean-luxury-card:hover .slate-img-frame img {
-    transform: scale(1.03) !important; /* Lebegéskor a kép minimálisan lélegzik, tágul */
+    transform: scale(1.03) !important;
+    /* Lebegéskor a kép minimálisan lélegzik, tágul */
 }
 
 .clean-luxury-card h3 {
@@ -800,7 +845,8 @@ body.architectural-canvas-body {
     color: #555e5b !important;
     line-height: 1.65 !important;
     margin-bottom: 25px !important;
-    flex-grow: 1 !important; /* Kitölti a teret, hogy a gombok egy vonalba essenek */
+    flex-grow: 1 !important;
+    /* Kitölti a teret, hogy a gombok egy vonalba essenek */
 }
 
 /* Unfold Prices gomb magazin stílusú formázása */
@@ -823,7 +869,8 @@ body.architectural-canvas-body {
 .clean-luxury-card:hover .slate-action-btn {
     color: var(--primary-color) !important;
     border-bottom-color: var(--primary-color) !important;
-    letter-spacing: 2.5px !important; /* Finoman megnyúlik a nyíl a gomb végén */
+    letter-spacing: 2.5px !important;
+    /* Finoman megnyúlik a nyíl a gomb végén */
 }
 
 /* ==========================================================================
@@ -833,7 +880,7 @@ body.architectural-canvas-body {
     .linear-grid-section {
         padding: 100px 0 !important;
     }
-    
+
     .linear-grid-section .container-fluid-luxury {
         padding-left: 30px !important;
         padding-right: 30px !important;
@@ -869,12 +916,14 @@ body.architectural-canvas-body {
 
     .clean-luxury-card {
         padding: 30px 20px !important;
-        transform: none !important; /* Mobilon letiltjuk az eltolást az ujjgörgetés védelmében */
+        transform: none !important;
+        /* Mobilon letiltjuk az eltolást az ujjgörgetés védelmében */
     }
 
     .clean-luxury-card:hover {
         transform: none !important;
-        background-color: rgba(163, 180, 164, 0.12) !important; /* Mobilon fix marad a selyemzöld a kontrasztért */
+        background-color: rgba(163, 180, 164, 0.12) !important;
+        /* Mobilon fix marad a selyemzöld a kontrasztért */
         box-shadow: 0 4px 20px rgba(163, 180, 164, 0.02) !important;
     }
 
@@ -886,9 +935,10 @@ body.architectural-canvas-body {
     .clean-luxury-card h3 {
         font-size: 1.35rem !important;
     }
-    
+
     .slate-action-btn {
-        align-self: center !important; /* Mobilon középre igazodik az ujjbegyekhez */
+        align-self: center !important;
+        /* Mobilon középre igazodik az ujjbegyekhez */
         margin-top: 5px !important;
     }
 }
@@ -897,6 +947,7 @@ body.architectural-canvas-body {
    EXCLUSIVE HARDWARE APPLE GRAPHICS ENGINE — SAFARI PRO MAX SPEED
    ========================================================================== */
 @media (max-width: 1100px) {
+
     /* Aktiváljuk az iPhone 15 Pro Max videóchipjét a kártyák vajpuha mobilgörgetéséért */
     .clean-luxury-card {
         -webkit-transform: translate3d(0, 0, 0) !important;
@@ -908,144 +959,150 @@ body.architectural-canvas-body {
 
 
 
+
+
 /* ==========================================================================
    BE NICE BEAUTY — OUR SERVICES EDITORIAL STICKY SZEKCIÓ (PART 4)
    ========================================================================== */
-.premium-services-section-old { 
-    padding: 140px 0; 
-    background-color: var(--primary-color) !important; /* Hivatalos zsályazöld selyemháttér */
-    width: 100%; 
-    border-top: 1px solid rgba(26, 34, 27, 0.05); 
-    border-bottom: 1px solid rgba(26, 34, 27, 0.05); 
+.premium-services-section-old {
+    padding: 140px 0;
+    background-color: var(--primary-color) !important;
+    /* Hivatalos zsályazöld selyemháttér */
+    width: 100%;
+    border-top: 1px solid rgba(26, 34, 27, 0.05);
+    border-bottom: 1px solid rgba(26, 34, 27, 0.05);
 }
 
-.luxury-services-container-old { 
-    max-width: 1240px; 
-    margin: 0 auto; 
-    padding: 0 40px; 
-    display: flex; 
-    justify-content: space-between; 
-    align-items: flex-start; 
+.luxury-services-container-old {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
 }
 
 /* --- BAL OLDALI STICKY EXKLUZÍV HASÁB (ASZTAL) --- */
-.luxury-intro-column-old { 
-    width: 42%; 
+.luxury-intro-column-old {
+    width: 42%;
 }
 
 .sticky-editorial-wrapper-old {
-    position: sticky !important; 
-    top: 140px; /* Görgetéskor kényelmesen megül a ragadós fejléc alatt */
+    position: sticky !important;
+    top: 140px;
+    /* Görgetéskor kényelmesen megül a ragadós fejléc alatt */
 }
 
-.editorial-tag-old { 
-    display: block; 
+.editorial-tag-old {
+    display: block;
     font-family: var(--font-sans);
-    font-size: 0.72rem; 
-    font-weight: 500; 
-    letter-spacing: 4px; 
-    color: var(--text-color) !important; 
-    text-transform: uppercase; 
-    margin-bottom: 20px; 
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 4px;
+    color: var(--text-color) !important;
+    text-transform: uppercase;
+    margin-bottom: 20px;
 }
 
-.editorial-main-title-old { 
-    font-family: var(--font-serif); 
-    font-size: 3.4rem; 
-    font-weight: 300; 
-    line-height: 1.15; 
-    margin-bottom: 25px; 
-    color: var(--white) !important; 
+.editorial-main-title-old {
+    font-family: var(--font-serif);
+    font-size: 3.4rem;
+    font-weight: 300;
+    line-height: 1.15;
+    margin-bottom: 25px;
+    color: var(--white) !important;
 }
 
-.editorial-lead-old { 
-    font-size: 0.98rem; 
-    font-weight: 300; 
-    color: var(--bg-color); 
-    line-height: 1.75; 
-    margin-bottom: 40px; 
-    opacity: 0.95; 
+.editorial-lead-old {
+    font-size: 0.98rem;
+    font-weight: 300;
+    color: var(--bg-color);
+    line-height: 1.75;
+    margin-bottom: 40px;
+    opacity: 0.95;
 }
 
 /* Explore Menu gomb magazin stílusú formázása */
-.editorial-cta-old { 
-    display: inline-block; 
-    text-decoration: none; 
+.editorial-cta-old {
+    display: inline-block;
+    text-decoration: none;
     font-family: var(--font-sans);
-    font-size: 0.74rem; 
-    font-weight: 500; 
-    text-transform: uppercase; 
-    letter-spacing: 2px; 
+    font-size: 0.74rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 2px;
     white-space: nowrap;
-    background-color: var(--text-color) !important; /* Steril karbonfekete luxus-gomb */
-    color: var(--white) !important; 
-    padding: 16px 36px; 
+    background-color: var(--text-color) !important;
+    /* Steril karbonfekete luxus-gomb */
+    color: var(--white) !important;
+    padding: 16px 36px;
     border: 1px solid var(--text-color);
     box-shadow: 0 12px 30px rgba(26, 34, 27, 0.1);
-    transition: background-color 0.4s ease, color 0.4s ease, box-shadow 0.4s ease, transform 0.4s ease !important; 
+    transition: background-color 0.4s ease, color 0.4s ease, box-shadow 0.4s ease, transform 0.4s ease !important;
 }
 
-.editorial-cta-old:hover { 
-    background-color: var(--white) !important; 
-    color: var(--text-color) !important; 
+.editorial-cta-old:hover {
+    background-color: var(--white) !important;
+    color: var(--text-color) !important;
     border-color: var(--white);
     transform: translateY(-2px);
 }
 
 /* --- JOBB OLDALI GÖRDÜLŐ KLINIKAI PROTOKOLL LISTA --- */
-.luxury-items-column-old { 
-    width: 48% !important; 
-    display: flex !important; 
-    flex-direction: column !important; 
+.luxury-items-column-old {
+    width: 48% !important;
+    display: flex !important;
+    flex-direction: column !important;
 }
 
-.editorial-service-item-old { 
-    display: flex; 
-    gap: 35px; 
-    align-items: flex-start; 
-    padding: 45px 10px; 
-    border-bottom: 1px solid rgba(252, 251, 250, 0.2); /* Lágy, selymes elválasztó vonalak */
+.editorial-service-item-old {
+    display: flex;
+    gap: 35px;
+    align-items: flex-start;
+    padding: 45px 10px;
+    border-bottom: 1px solid rgba(252, 251, 250, 0.2);
+    /* Lágy, selymes elválasztó vonalak */
 }
 
-.editorial-service-item-old:last-child { 
-    border-bottom: none; 
+.editorial-service-item-old:last-child {
+    border-bottom: none;
 }
 
-.editorial-meta-old { 
-    display: flex; 
-    flex-direction: column; 
-    align-items: center; 
-    min-width: 40px; 
+.editorial-meta-old {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 40px;
 }
 
-.editorial-num-old { 
-    font-family: var(--font-serif); 
-    font-size: 1.8rem; 
-    font-weight: 300; 
-    color: var(--text-color); 
+.editorial-num-old {
+    font-family: var(--font-serif);
+    font-size: 1.8rem;
+    font-weight: 300;
+    color: var(--text-color);
 }
 
-.editorial-accent-line-old { 
-    width: 20px; 
-    height: 1px; 
-    background-color: rgba(252, 251, 250, 0.4); 
-    margin-top: 10px; 
+.editorial-accent-line-old {
+    width: 20px;
+    height: 1px;
+    background-color: rgba(252, 251, 250, 0.4);
+    margin-top: 10px;
 }
 
-.editorial-body-old h3 { 
-    font-family: var(--font-serif); 
-    font-size: 1.65rem; 
-    font-weight: 400; 
-    color: var(--white) !important; 
-    margin-bottom: 12px; 
+.editorial-body-old h3 {
+    font-family: var(--font-serif);
+    font-size: 1.65rem;
+    font-weight: 400;
+    color: var(--white) !important;
+    margin-bottom: 12px;
 }
 
-.editorial-body-old p { 
-    font-size: 0.92rem; 
-    font-weight: 300; 
-    color: var(--bg-color); 
-    line-height: 1.65; 
-    opacity: 0.9; 
+.editorial-body-old p {
+    font-size: 0.92rem;
+    font-weight: 300;
+    color: var(--bg-color);
+    line-height: 1.65;
+    opacity: 0.9;
 }
 
 /* ==========================================================================
@@ -1057,47 +1114,49 @@ body.architectural-canvas-body {
     }
 
     /* Kikapcsoljuk az oldalsó feszítést tableten a törések ellen */
-    .luxury-services-container-old { 
-        flex-direction: column !important; 
-        gap: 50px !important; 
+    .luxury-services-container-old {
+        flex-direction: column !important;
+        gap: 50px !important;
         padding-left: 30px !important;
         padding-right: 30px !important;
     }
 
-    .luxury-intro-column-old, .luxury-items-column-old { 
-        width: 100% !important; 
+    .luxury-intro-column-old,
+    .luxury-items-column-old {
+        width: 100% !important;
     }
 
-    .sticky-editorial-wrapper-old { 
-        position: static !important; /* Feloldjuk a sticky-t, hogy kényelmesen görgessen a lista felett */
-        text-align: center !important; 
+    .sticky-editorial-wrapper-old {
+        position: static !important;
+        /* Feloldjuk a sticky-t, hogy kényelmesen görgessen a lista felett */
+        text-align: center !important;
     }
 
-    .editorial-main-title-old { 
-        font-size: 2.8rem !important; 
+    .editorial-main-title-old {
+        font-size: 2.8rem !important;
     }
 
-    .editorial-cta-old { 
-        align-self: center !important; 
-        display: inline-block !important; 
+    .editorial-cta-old {
+        align-self: center !important;
+        display: inline-block !important;
     }
 
-    .editorial-service-item-old { 
-        flex-direction: row !important; 
-        text-align: left !important; 
-        gap: 25px !important; 
-        padding: 35px 0 !important; 
+    .editorial-service-item-old {
+        flex-direction: row !important;
+        text-align: left !important;
+        gap: 25px !important;
+        padding: 35px 0 !important;
     }
 }
 
 @media (max-width: 650px) {
-    .luxury-services-container-old { 
+    .luxury-services-container-old {
         padding-left: 20px !important;
         padding-right: 20px !important;
     }
 
-    .editorial-main-title-old { 
-        font-size: 2.0rem !important; 
+    .editorial-main-title-old {
+        font-size: 2.0rem !important;
         line-height: 1.3 !important;
     }
 
@@ -1107,56 +1166,59 @@ body.architectural-canvas-body {
     }
 
     /* Steril okostelefon nézet középre igazított ujjbegy-protokollal */
-    .editorial-service-item-old { 
-        flex-direction: column !important; 
-        align-items: center !important; 
-        text-align: center !important; 
-        gap: 15px !important; 
+    .editorial-service-item-old {
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+        gap: 15px !important;
     }
 
     .editorial-accent-line-old {
-        display: none !important; /* Letisztítjuk a csíkot mobilon a zsúfoltság ellen */
+        display: none !important;
+        /* Letisztítjuk a csíkot mobilon a zsúfoltság ellen */
     }
 
-    .editorial-body-old h3 { 
-        font-size: 1.4rem !important; 
+    .editorial-body-old h3 {
+        font-size: 1.4rem !important;
     }
 
-    .editorial-body-old p { 
-        font-size: 0.88rem !important; 
+    .editorial-body-old p {
+        font-size: 0.88rem !important;
         line-height: 1.6 !important;
     }
 }
 
 
 
+
+
 /* ==========================================================================
    BE NICE BEAUTY — THE EXHIBITION MONOGRAPH SZEKCIÓ (PART 5)
    ========================================================================== */
-.museum-monograph-section { 
-    padding: 140px 20px; 
-    background-color: var(--bg-color) !important; 
-    width: 100%; 
+.museum-monograph-section {
+    padding: 140px 20px;
+    background-color: var(--bg-color) !important;
+    width: 100%;
 }
 
-.museum-monograph-container { 
-    max-width: 850px; 
-    margin: 0 auto; 
+.museum-monograph-container {
+    max-width: 850px;
+    margin: 0 auto;
 }
 
 /* Fenséges, steril papírtömb doboz asztalon */
-.monograph-paper-block { 
-    padding: 75px 65px; 
-    background-color: var(--white); 
-    border: 1px solid rgba(163, 180, 164, 0.15); 
-    box-shadow: 0 25px 55px rgba(26, 34, 27, 0.02); 
+.monograph-paper-block {
+    padding: 75px 65px;
+    background-color: var(--white);
+    border: 1px solid rgba(163, 180, 164, 0.15);
+    box-shadow: 0 25px 55px rgba(26, 34, 27, 0.02);
 }
 
-.monograph-header-decor { 
-    font-size: 1.4rem; 
-    color: var(--primary-color); 
-    text-align: center; 
-    margin-bottom: 20px; 
+.monograph-header-decor {
+    font-size: 1.4rem;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 .monograph-tag {
@@ -1171,25 +1233,25 @@ body.architectural-canvas-body {
     margin-bottom: 15px !important;
 }
 
-.museum-monograph-container h2 { 
-    font-family: var(--font-serif); 
-    font-size: 3rem; 
-    font-weight: 300; 
+.museum-monograph-container h2 {
+    font-family: var(--font-serif);
+    font-size: 3rem;
+    font-weight: 300;
     line-height: 1.2;
-    text-align: center; 
-    margin-bottom: 45px; 
-    color: var(--text-color); 
+    text-align: center;
+    margin-bottom: 45px;
+    color: var(--text-color);
     letter-spacing: 0.5px;
 }
 
-.monograph-prose p { 
+.monograph-prose p {
     font-family: var(--font-sans) !important;
-    font-size: 0.98rem !important; 
-    font-weight: 300; 
-    color: #3c473d; 
-    line-height: 1.8; 
-    margin-bottom: 25px; 
-    text-align: center; 
+    font-size: 0.98rem !important;
+    font-weight: 300;
+    color: #3c473d;
+    line-height: 1.8;
+    margin-bottom: 25px;
+    text-align: center;
 }
 
 /* 
@@ -1197,43 +1259,45 @@ body.architectural-canvas-body {
    Edit Balla küldetés-nyilatkozata megkapja az arculatodhoz illő, fenséges
    12%-os zsályazöld selyemháttér-kiemelést és a vastag klinikai márkavonalat.
 */
-.monograph-prose-quote { 
-    font-family: var(--font-serif) !important; 
-    font-size: 1.6rem !important; 
-    font-style: italic !important; 
-    color: var(--text-color) !important; 
-    background-color: rgba(163, 180, 164, 0.12) !important; /* 12%-os tiszta márkaszín */
+.monograph-prose-quote {
+    font-family: var(--font-serif) !important;
+    font-size: 1.6rem !important;
+    font-style: italic !important;
+    color: var(--text-color) !important;
+    background-color: rgba(163, 180, 164, 0.12) !important;
+    /* 12%-os tiszta márkaszín */
     border-left: 4px solid var(--primary-color) !important;
-    padding: 35px 30px !important; /* Tágas, kényelmes belső térköz */
-    text-align: left !important; 
-    margin: 40px 0 !important; 
-    line-height: 1.5 !important; 
+    padding: 35px 30px !important;
+    /* Tágas, kényelmes belső térköz */
+    text-align: left !important;
+    margin: 40px 0 !important;
+    line-height: 1.5 !important;
     border-radius: 0 4px 4px 0;
     box-shadow: 0 10px 30px rgba(163, 180, 164, 0.04) !important;
 }
 
 /* Személyes, magazin szintű aláírás-doboz */
-.monograph-signature-box { 
-    margin-top: 55px; 
-    display: flex; 
-    flex-direction: column; 
-    align-items: center; 
-    gap: 5px; 
+.monograph-signature-box {
+    margin-top: 55px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
 }
 
-.sig-name { 
-    font-family: var(--font-serif); 
-    font-size: 1.8rem; 
-    font-style: italic; 
-    color: var(--text-color); 
+.sig-name {
+    font-family: var(--font-serif);
+    font-size: 1.8rem;
+    font-style: italic;
+    color: var(--text-color);
 }
 
-.sig-title { 
+.sig-title {
     font-family: var(--font-sans);
-    font-size: 0.68rem; 
-    color: var(--primary-color); 
-    letter-spacing: 2px; 
-    text-transform: uppercase; 
+    font-size: 0.68rem;
+    color: var(--primary-color);
+    letter-spacing: 2px;
+    text-transform: uppercase;
     font-weight: 500;
 }
 
@@ -1244,9 +1308,11 @@ body.architectural-canvas-body {
     .museum-monograph-section {
         padding: 100px 30px !important;
     }
+
     .museum-monograph-container h2 {
         font-size: 2.4rem !important;
     }
+
     .monograph-paper-block {
         padding: 55px 45px !important;
     }
@@ -1256,57 +1322,61 @@ body.architectural-canvas-body {
     .museum-monograph-section {
         padding: 60px 20px !important;
     }
-    
-    .monograph-paper-block { 
-        padding: 40px 20px !important; 
-    } 
-    
+
+    .monograph-paper-block {
+        padding: 40px 20px !important;
+    }
+
     .museum-monograph-container h2 {
         font-size: 1.85rem !important;
         line-height: 1.3 !important;
         margin-bottom: 30px !important;
     }
 
-    .monograph-prose p { 
-        font-size: 0.88rem !important; 
-        line-height: 1.65 !important; 
+    .monograph-prose p {
+        font-size: 0.88rem !important;
+        line-height: 1.65 !important;
         margin-bottom: 20px !important;
     }
-    
+
     /* Mobil ujjbegy-arányos idézet-doboz kiigazítás */
-    .monograph-prose-quote { 
-        font-size: 1.3rem !important; 
+    .monograph-prose-quote {
+        font-size: 1.3rem !important;
         line-height: 1.5 !important;
-        margin: 30px 0 !important; 
-        padding: 25px 20px !important; 
-        border-left: 3px solid var(--primary-color) !important; 
+        margin: 30px 0 !important;
+        padding: 25px 20px !important;
+        border-left: 3px solid var(--primary-color) !important;
     }
-    
+
     .monograph-signature-box {
         margin-top: 40px !important;
     }
-    
+
     .sig-name {
         font-size: 1.6rem !important;
     }
 }
 
 
+
+
+
 /* ==========================================================================
    BE NICE BEAUTY — CINEMATIC INFINITE WALL SZEKCIÓ (HIÁNYTALAN CORE JAVÍTÁS)
    ========================================================================== */
-.infinite-reviews-marquee-section { 
-    padding: 120px 0; 
-    background-color: var(--primary-color) !important; /* Hivatalos zsályazöld selyemháttér */
-    width: 100%; 
-    overflow: hidden; 
-    border-top: 1px solid rgba(26, 34, 27, 0.1); 
-    border-bottom: 1px solid rgba(26, 34, 27, 0.1); 
+.infinite-reviews-marquee-section {
+    padding: 120px 0;
+    background-color: var(--primary-color) !important;
+    /* Hivatalos zsályazöld selyemháttér */
+    width: 100%;
+    overflow: hidden;
+    border-top: 1px solid rgba(26, 34, 27, 0.1);
+    border-bottom: 1px solid rgba(26, 34, 27, 0.1);
 }
 
-.marquee-title-wrapper { 
-    text-align: center; 
-    margin-bottom: 50px; 
+.marquee-title-wrapper {
+    text-align: center;
+    margin-bottom: 50px;
 }
 
 .marquee-mini-tag {
@@ -1321,25 +1391,26 @@ body.architectural-canvas-body {
 }
 
 .marquee-title-wrapper h2 {
-    font-family: var(--font-serif); 
-    font-size: 3.2rem; 
-    font-weight: 300; 
+    font-family: var(--font-serif);
+    font-size: 3.2rem;
+    font-weight: 300;
     color: var(--white) !important;
     letter-spacing: 0.5px;
 }
 
 /* VÉGZETESEN STABIL SZALAG CSOMAGOLÓ */
-.marquee-infinite-container { 
-    width: 100%; 
-    display: flex !important; 
-    overflow: hidden !important; 
+.marquee-infinite-container {
+    width: 100%;
+    display: flex !important;
+    overflow: hidden !important;
 }
 
 /* A MOZGÓ SÍN: Nem korlátozzuk a szélességét, hagyjuk szabadon megnyúlni jobbra! */
-.marquee-moving-track { 
-    display: flex !important; 
-    width: max-content !important; /* Felveszi a belső szövegek valós, óriási szélességét */
-    animation: iosSafeMarquee 25s infinite linear !important; 
+.marquee-moving-track {
+    display: flex !important;
+    width: max-content !important;
+    /* Felveszi a belső szövegek valós, óriási szélességét */
+    animation: iosSafeMarquee 25s infinite linear !important;
     will-change: transform;
 }
 
@@ -1347,22 +1418,26 @@ body.architectural-canvas-body {
 .marquee-block {
     display: flex !important;
     flex-direction: row !important;
-    gap: 60px !important; /* Elegáns távolság a két blokk találkozásánál */
+    gap: 60px !important;
+    /* Elegáns távolság a két blokk találkozásánál */
     white-space: nowrap !important;
-    flex-shrink: 0 !important; /* Szigorúan megtiltja a Safarinak, hogy összenyomja a dobozt! */
+    flex-shrink: 0 !important;
+    /* Szigorúan megtiltja a Safarinak, hogy összenyomja a dobozt! */
 }
 
 /* A SZÖVEGDOBOZOK FORMÁZÁSA */
-.marquee-text-block { 
-    font-family: var(--font-serif); 
-    font-size: 1.65rem; 
-    font-style: italic; 
-    color: var(--white) !important; 
-    white-space: nowrap !important; /* Megakadályozza a mobil sortörést */
-    font-weight: 300; 
+.marquee-text-block {
+    font-family: var(--font-serif);
+    font-size: 1.65rem;
+    font-style: italic;
+    color: var(--white) !important;
+    white-space: nowrap !important;
+    /* Megakadályozza a mobil sortörést */
+    font-weight: 300;
     display: flex !important;
     align-items: center !important;
-    flex-shrink: 0 !important; /* Nem engedi a szövegeket egymásra préselődni */
+    flex-shrink: 0 !important;
+    /* Nem engedi a szövegeket egymásra préselődni */
     padding: 0 10px !important;
     visibility: visible !important;
     opacity: 1 !important;
@@ -1372,49 +1447,96 @@ body.architectural-canvas-body {
     color: #ffffff !important;
 }
 
-.marquee-text-block strong { 
-    color: var(--text-color) !important; 
-    font-weight: 500; 
-    font-style: normal; 
-    font-size: 1.15rem; 
-    font-family: var(--font-sans); 
-    margin-left: 15px; 
+.marquee-text-block strong {
+    color: var(--text-color) !important;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 1.15rem;
+    font-family: var(--font-sans);
+    margin-left: 15px;
     letter-spacing: 0.5px;
     display: inline-block !important;
 }
 
 /* --- HARDVERESEN GYORSÍTOTT GYÁRI KEYFRAMES AZ APPLE ESZKÖZÖKRE --- */
 @-webkit-keyframes iosSafeMarquee {
-    0% { -webkit-transform: translate3d(0, 0, 0); transform: translate3d(0, 0, 0); }
-    100% { -webkit-transform: translate3d(-50%, 0, 0); transform: translate3d(-50%, 0, 0); }
+    0% {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+
+    100% {
+        -webkit-transform: translate3d(-50%, 0, 0);
+        transform: translate3d(-50%, 0, 0);
+    }
 }
 
 @keyframes iosSafeMarquee {
-    0% { -webkit-transform: translate3d(0, 0, 0); transform: translate3d(0, 0, 0); }
-    100% { -webkit-transform: translate3d(-50%, 0, 0); transform: translate3d(-50%, 0, 0); }
+    0% {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+
+    100% {
+        -webkit-transform: translate3d(-50%, 0, 0);
+        transform: translate3d(-50%, 0, 0);
+    }
 }
 
 /* ==========================================================================
    RESZPONZÍV MOBIL KIIGAZÍTÁSOK (1100PX ÉS 650PX ALATT)
    ========================================================================== */
 @media (max-width: 1100px) {
-    .infinite-reviews-marquee-section { padding: 90px 0 !important; }
-    .marquee-title-wrapper h2 { font-size: 2.4rem !important; }
-    .marquee-text-block { font-size: 1.35rem !important; }
-    .marquee-text-block strong { font-size: 0.95rem !important; margin-left: 10px !important; }
+    .infinite-reviews-marquee-section {
+        padding: 90px 0 !important;
+    }
+
+    .marquee-title-wrapper h2 {
+        font-size: 2.4rem !important;
+    }
+
+    .marquee-text-block {
+        font-size: 1.35rem !important;
+    }
+
+    .marquee-text-block strong {
+        font-size: 0.95rem !important;
+        margin-left: 10px !important;
+    }
 }
 
 @media (max-width: 650px) {
-    .infinite-reviews-marquee-section { padding: 70px 0 !important; }
-    .marquee-title-wrapper h2 { font-size: 1.85rem !important; line-height: 1.3 !important; }
-    .marquee-title-wrapper { margin-bottom: 35px !important; padding: 0 20px !important; }
-    .marquee-moving-track { animation: iosSafeMarquee 20s infinite linear !important; } /* Kompaktabb mozgási sebesség mobilon */
-    .marquee-block { gap: 40px !important; }
-    .marquee-text-block { font-size: 1.2rem !important; }
-    .marquee-text-block strong { font-size: 0.85rem !important; }
+    .infinite-reviews-marquee-section {
+        padding: 70px 0 !important;
+    }
+
+    .marquee-title-wrapper h2 {
+        font-size: 1.85rem !important;
+        line-height: 1.3 !important;
+    }
+
+    .marquee-title-wrapper {
+        margin-bottom: 35px !important;
+        padding: 0 20px !important;
+    }
+
+    .marquee-moving-track {
+        animation: iosSafeMarquee 20s infinite linear !important;
+    }
+
+    /* Kompaktabb mozgási sebesség mobilon */
+    .marquee-block {
+        gap: 40px !important;
+    }
+
+    .marquee-text-block {
+        font-size: 1.2rem !important;
+    }
+
+    .marquee-text-block strong {
+        font-size: 0.85rem !important;
+    }
 }
-
-
 
 
 
@@ -1994,6 +2116,8 @@ body.architectural-canvas-body {
 
 
 
+
+
 /* ==========================================================================
    BE NICE BEAUTY — ARCHITECTURAL PREMIUM FOOTER (PART 6)
    ========================================================================== */
@@ -2218,10 +2342,6 @@ body.architectural-canvas-body {
     .footer-copyright-strip p { margin-bottom: 15px !important; text-align: center !important; }
     .footer-legal-links { justify-content: center !important; gap: 20px !important; }
 }
-
-
-
-
 
 
 
