@@ -1437,6 +1437,37 @@ body.architectural-canvas-body {
         backface-visibility: hidden !important;
     }
 }
+/* ==========================================================================
+   IPHONE GPU RECOVERY — INFINTIE MARQUEE RUN KÉNYSZERÍTŐ FIXED (A FÁJL VÉGE)
+   ========================================================================== */
+
+/* 
+   Nyers erővel felülírjuk a Safari animáció-letiltási hibáját mobilon.
+   A 3D tengely (translate3d) bevonásával az iPhone belső grafikus chipjét (GPU) 
+   munkára kényszerítjük, így a sín elindul, a mozgás pedig vajpuha lesz!
+*/
+@media (max-width: 1100px) {
+    .marquee-moving-track {
+        display: flex !important;
+        width: max-content !important;
+        gap: 40px !important;
+        /* Nyers erővel újraindítjuk és rákényszerítjük az Apple-specifikus futást */
+        -webkit-animation: iosSafeMarquee 22s infinite linear !important;
+        animation: iosSafeMarquee 22s infinite linear !important;
+    }
+}
+
+/* Dedikált, hardveresen gyorsított futási tengely az összes Apple eszközre */
+@-webkit-keyframes iosSafeMarquee {
+    0% { -webkit-transform: translate3d(0, 0, 0); transform: translate3d(0, 0, 0); }
+    100% { -webkit-transform: translate3d(-50%, 0, 0); transform: translate3d(-50%, 0, 0); }
+}
+
+@keyframes iosSafeMarquee {
+    0% { -webkit-transform: translate3d(0, 0, 0); transform: translate3d(0, 0, 0); }
+    100% { -webkit-transform: translate3d(-50%, 0, 0); transform: translate3d(-50%, 0, 0); }
+}
+
 
 
 
