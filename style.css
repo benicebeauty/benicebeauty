@@ -1415,3 +1415,578 @@ body.architectural-canvas-body {
 }
 
 
+
+
+
+
+
+
+
+/* ==========================================================================
+   BE NICE BEAUTY — EXCLUSIVE CONTACT DUAL-COLUMN SYSTEM (PART 5)
+   ========================================================================== */
+.journal-content-section {
+    width: 100%;
+    padding: 120px 0;
+    background-color: var(--bg-color) !important;
+    box-sizing: border-box;
+}
+
+.inkless-container {
+    max-width: 1240px !important;
+    margin: 0 auto !important;
+    padding: 0 40px !important;
+    width: 100% !important;
+}
+
+.inkless-main-flex-grid {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: flex-start !important;
+    width: 100% !important;
+    margin-bottom: 70px !important;
+}
+
+/* --- BAL HASÁB: LONDON LOKÁCIÓS ADATTÁR --- */
+.inkless-info-column-block {
+    width: 45% !important;
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+.inkless-info-column-block h2 {
+    font-family: var(--font-serif) !important;
+    font-size: 3.2rem !important;
+    font-weight: 300 !important;
+    color: var(--text-color) !important;
+    margin-bottom: 20px !important;
+}
+
+.inkless-info-column-block .collage-excerpt {
+    font-family: var(--font-sans) !important;
+    font-size: 0.98rem !important;
+    font-weight: 300 !important;
+    color: #555e5b !important;
+    line-height: 1.75 !important;
+    margin-bottom: 45px !important;
+}
+
+.inkless-text-rows {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 30px !important;
+}
+
+/* London Sanctuary selymes, 12%-os zsályazöld háttérmatricája */
+.sanctuary-card-london {
+    background-color: rgba(163, 180, 164, 0.12) !important;
+    /* 12%-os tiszta márkaszín */
+    border: 1px solid rgba(163, 180, 164, 0.35) !important;
+    border-left: 4px solid #a3b4a4 !important;
+    /* Markáns klinikai sáv a bal szélen */
+    border-radius: 4px !important;
+    padding: 40px 35px !important;
+    box-shadow: 0 4px 20px rgba(163, 180, 164, 0.02) !important;
+}
+
+.triple-card-chapter {
+    display: block !important;
+    font-family: var(--font-sans) !important;
+    font-size: 0.65rem !important;
+    font-weight: 500 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 2px !important;
+    color: var(--accent-color) !important;
+    margin-bottom: 8px !important;
+}
+
+.sanctuary-card-london h4 {
+    font-family: var(--font-serif) !important;
+    font-size: 1.6rem !important;
+    margin-bottom: 12px !important;
+    font-weight: 400 !important;
+    color: var(--text-color) !important;
+}
+
+.sanctuary-address {
+    font-family: var(--font-sans) !important;
+    font-weight: 300 !important;
+    font-size: 0.95rem !important;
+    line-height: 1.6 !important;
+    color: var(--text-color) !important;
+    margin-bottom: 20px !important;
+}
+
+.sanctuary-direct-contact {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 8px !important;
+    margin-bottom: 25px !important;
+}
+
+.sanctuary-direct-contact p {
+    font-family: var(--font-sans) !important;
+    font-size: 0.92rem !important;
+    font-weight: 300 !important;
+    color: #555e5b !important;
+}
+
+.sanctuary-direct-contact strong {
+    font-weight: 500 !important;
+    color: var(--text-color) !important;
+}
+
+.sanctuary-direct-contact a {
+    color: var(--text-color) !important;
+    text-decoration: none !important;
+    font-weight: 400 !important;
+    border-bottom: 1px solid rgba(26, 34, 27, 0.15) !important;
+    padding-bottom: 1px !important;
+    transition: var(--transition) !important;
+}
+
+.sanctuary-direct-contact a:hover {
+    color: var(--primary-color) !important;
+    border-bottom-color: var(--primary-color) !important;
+}
+
+/* Nyitvatartás belső magazin sávja */
+.sanctuary-hours-block {
+    margin: 25px 0;
+    padding: 20px 0;
+    border-top: 1px dashed rgba(163, 180, 164, 0.3) !important;
+    border-bottom: 1px dashed rgba(163, 180, 164, 0.3) !important;
+}
+
+.sanctuary-hours-block h5 {
+    font-family: var(--font-sans) !important;
+    font-size: 0.68rem !important;
+    font-weight: 500 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 2px !important;
+    color: var(--accent-color) !important;
+    margin-bottom: 15px !important;
+}
+
+.sanctuary-hours-list {
+    list-style: none !important;
+    font-family: var(--font-sans) !important;
+    font-size: 0.88rem !important;
+    font-weight: 300 !important;
+    line-height: 1.8 !important;
+}
+
+.sanctuary-hours-list li {
+    display: flex !important;
+    justify-content: space-between !important;
+    color: #555e5b !important;
+}
+
+/* Travel & Parking kétirányú információs sávja */
+.inner-contact-travel-details {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 12px !important;
+    width: 100% !important;
+    margin-top: 20px !important;
+}
+
+.travel-meta-row {
+    display: flex !important;
+    align-items: flex-start !important;
+    width: 100% !important;
+}
+
+.travel-meta-label {
+    font-family: var(--font-sans) !important;
+    font-size: 0.82rem !important;
+    font-weight: 500 !important;
+    color: var(--text-color) !important;
+    min-width: 75px !important;
+    flex-shrink: 0 !important;
+    display: inline-block !important;
+}
+
+.travel-meta-text {
+    font-family: var(--font-sans) !important;
+    font-size: 0.82rem !important;
+    color: #555e5b !important;
+    line-height: 1.6 !important;
+    text-align: left !important;
+}
+
+/* --- JOBB HASÁB: PRÉMIUM FORM DOBOZ ÉS ŰRLAP --- */
+.inkless-form-column-block {
+    width: 48% !important;
+}
+
+.inkless-form-box {
+    background-color: var(--white) !important;
+    padding: 55px 45px !important;
+    border: 1px solid rgba(163, 180, 164, 0.15) !important;
+    border-top: 3px solid var(--primary-color) !important;
+    /* Felső orvosi csík */
+    box-shadow: 0 25px 55px rgba(26, 34, 27, 0.02) !important;
+}
+
+.inkless-form-box h3 {
+    font-family: var(--font-serif) !important;
+    font-size: 2.2rem !important;
+    color: var(--text-color) !important;
+    margin-bottom: 12px !important;
+}
+
+.inkless-form-box p {
+    font-family: var(--font-sans) !important;
+    color: #555e5b !important;
+    font-size: 0.9rem !important;
+    line-height: 1.65 !important;
+    margin-bottom: 45px !important;
+}
+
+.inkless-form-element {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 35px !important;
+}
+
+.inkless-group {
+    position: relative !important;
+    width: 100% !important;
+}
+
+.inkless-form-element input {
+    width: 100% !important;
+    padding: 12px 0 !important;
+    background: transparent !important;
+    border: none !important;
+    border-bottom: 1px solid rgba(26, 34, 27, 0.15) !important;
+    font-family: var(--font-sans) !important;
+    font-size: 0.95rem !important;
+    color: var(--text-color) !important;
+    transition: var(--transition) !important;
+}
+
+.inkless-group label {
+    position: absolute !important;
+    top: 12px !important;
+    left: 0 !important;
+    font-size: 0.85rem !important;
+    color: #888 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+    pointer-events: none !important;
+    transition: var(--transition) !important;
+}
+
+.inkless-form-element input:focus~label,
+.inkless-form-element input:not(:placeholder-shown)~label {
+    top: -18px !important;
+    font-size: 0.68rem !important;
+    color: var(--primary-color) !important;
+    letter-spacing: 1.5px !important;
+}
+
+.inkless-form-element input:focus {
+    border-bottom-color: var(--primary-color) !important;
+}
+
+/* --- KUSTZOM KIGÖRDÜLŐ DROPDOWN EGYSÉG --- */
+.custom-dropdown-container {
+    padding: 5px 0 !important;
+    cursor: pointer !important;
+}
+
+.select-field-label {
+    display: block !important;
+    font-family: var(--font-sans) !important;
+    font-size: 0.68rem !important;
+    color: var(--primary-color) !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1.5px !important;
+    margin-bottom: 6px !important;
+}
+
+.custom-select-trigger {
+    width: 100% !important;
+    font-family: var(--font-sans) !important;
+    font-size: 0.95rem !important;
+    color: var(--text-color) !important;
+    padding: 10px 35px 10px 0 !important;
+    user-select: none !important;
+}
+
+.custom-dropdown-container::after {
+    content: '▼' !important;
+    font-size: 0.7rem !important;
+    color: #666 !important;
+    position: absolute !important;
+    right: 5px !important;
+    bottom: 14px !important;
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), color 0.4s ease !important;
+}
+
+.custom-dropdown-container:hover::after,
+.custom-dropdown-container.menu-open::after {
+    color: var(--primary-color) !important;
+}
+
+.custom-dropdown-container.menu-open::after {
+    transform: rotate(180deg) !important;
+}
+
+.custom-options-list {
+    position: absolute !important;
+    top: 100% !important;
+    left: 0 !important;
+    width: 100% !important;
+    background-color: var(--white) !important;
+    border: 1px solid rgba(163, 180, 164, 0.15) !important;
+    box-shadow: 0 15px 35px rgba(26, 34, 27, 0.08) !important;
+    list-style: none !important;
+    margin: 5px 0 0 0 !important;
+    padding: 0 !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transform: translateY(-10px) !important;
+    z-index: 100 !important;
+    transition: opacity 0.3s ease, transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), visibility 0.3s !important;
+}
+
+.custom-dropdown-container.menu-open .custom-options-list {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(0) !important;
+}
+
+.custom-options-list li {
+    font-family: var(--font-sans) !important;
+    font-size: 0.9rem !important;
+    color: var(--text-color) !important;
+    padding: 12px 20px !important;
+    transition: background-color 0.3s ease, color 0.3s ease !important;
+}
+
+.custom-options-list li:hover {
+    background-color: rgba(163, 180, 164, 0.12) !important;
+    color: var(--primary-color) !important;
+}
+
+/* Textarea Szövegdoboz mező */
+.inkless-group-textarea {
+    position: relative !important;
+    width: 100% !important;
+}
+
+.inkless-group-textarea label {
+    position: absolute !important;
+    top: 12px !important;
+    left: 0 !important;
+    font-size: 0.85rem !important;
+    color: #888 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+    transition: var(--transition) !important;
+    pointer-events: none !important;
+}
+
+.inkless-form-column-block textarea {
+    width: 100% !important;
+    padding: 12px 0 !important;
+    background: transparent !important;
+    border: none !important;
+    border-bottom: 1px solid rgba(26, 34, 27, 0.15) !important;
+    font-family: var(--font-sans) !important;
+    outline: none !important;
+    font-size: 0.95rem !important;
+    color: var(--text-color) !important;
+    transition: var(--transition) !important;
+}
+
+.inkless-form-column-block textarea:focus~label,
+.inkless-form-column-block textarea:not(:placeholder-shown)~label {
+    top: -18px !important;
+    font-size: 0.68rem !important;
+    color: var(--primary-color) !important;
+    letter-spacing: 1.5px !important;
+}
+
+.inkless-form-column-block textarea:focus {
+    border-bottom-color: var(--primary-color) !important;
+}
+
+/* Küldés Gomb formázása (Karbonfekete gyári stílus) */
+.inkless-submit-btn {
+    background-color: var(--text-color) !important;
+    color: var(--white) !important;
+    border: none !important;
+    padding: 16px !important;
+    font-family: var(--font-sans) !important;
+    font-size: 0.82rem !important;
+    font-weight: 500 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 2px !important;
+    cursor: pointer !important;
+    width: 100% !important;
+    box-shadow: 0 12px 30px rgba(26, 34, 27, 0.1) !important;
+    transition: var(--transition) !important;
+}
+
+.inkless-submit-btn:hover {
+    background-color: var(--primary-color) !important;
+    box-shadow: 0 8px 20px rgba(163, 180, 164, 0.2) !important;
+}
+
+.monumental-map-passepartout.map-narrow {
+    width: 100% !important;
+    height: 350px !important;
+    border: 1px solid rgba(163, 180, 164, 0.15) !important;
+    padding: 12px !important;
+    background-color: var(--white) !important;
+    margin-top: 50px !important;
+}
+
+/* ==========================================================================GYÁRI RESPONSIVE MODUL — CONTACT TABLET & MOBIL ENGINE (1100PX ALATT)========================================================================== */
+@media (max-width: 1100px) {
+    .journal-content-section {
+        padding: 90px 0 !important;
+    }
+
+    .inkless-main-flex-grid {
+        flex-direction: column !important;
+        gap: 50px !important;
+        margin-bottom: 40px !important;
+    }
+
+    .inkless-info-column-block,
+    .inkless-form-column-block {
+        width: 100% !important;
+    }
+
+    .inkless-info-column-block h2 {
+        font-size: 2.6rem !important;
+        text-align: center !important;
+    }
+
+    .inkless-info-column-block .collage-excerpt {
+        text-align: center !important;
+        margin-bottom: 35px !important;
+    }
+
+    .sanctuary-card-london {
+        padding: 35px 25px !important;
+    }
+
+    .monumental-map-passepartout.map-narrow {
+        height: 300px !important;
+        margin-top: 30px !important;
+    }
+}
+
+@media (max-width: 650px) {
+    .journal-content-section {
+        padding: 60px 0 !important;
+    }
+
+    .inkless-info-column-block h2 {
+        font-size: 1.85rem !important;
+        line-height: 1.3 !important;
+    }
+
+    .inkless-info-column-block .collage-excerpt {
+        font-size: 0.9rem !important;
+        line-height: 1.65 !important;
+    }
+
+    .sanctuary-card-london {
+        padding: 30px 20px !important;
+        text-align: center !important;
+    }
+
+    .sanctuary-address {
+        font-size: 0.9rem !important;
+    }
+
+    .sanctuary-hours-list li {
+        border-bottom: none !important;
+        justify-content: space-between !important;
+    }
+
+    .inner-contact-travel-details {
+        max-width: 100% !important;
+        margin: 20px auto 0 auto !important;
+    }
+
+    .travel-meta-row {
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+        gap: 4px !important;
+        margin-bottom: 12px !important;
+    }
+
+    .travel-meta-row:last-child {
+        margin-bottom: 0 !important;
+    }
+
+    .inkless-form-box {
+        padding: 40px 20px !important;
+    }
+
+    .inkless-form-box h3 {
+        font-size: 1.65rem !important;
+        text-align: center !important;
+        line-height: 1.3 !important;
+    }
+
+    .inkless-form-box p {
+        font-size: 0.88rem !important;
+        text-align: center !important;
+        margin-bottom: 35px !important;
+    }
+
+    .monumental-map-passepartout.map-narrow {
+        height: 230px !important;
+        padding: 4px !important;
+    }
+}
+
+/* ==========================================================================EXCLUSIVE HARDWARE APPLE GRAPHICS ENGINE — SAFARI PRO MAX SPEED========================================================================== /@media (max-width: 1100px) {/ Aktiváljuk az iPhone 15 Pro Max videóchipjét a kártyák és az űrlap vajpuha görgetéséért */
+.sanctuary-card-london,
+.inkless-form-box {
+    -webkit-transform: translate3d(0, 0, 0) !important;
+    transform: translate3d(0, 0, 0) !important;
+    -webkit-backface-visibility: hidden !important;
+    backface-visibility: hidden !important;
+}
+/* ==========================================================================
+   MONUMENTAL MAP PASSEPARTOUT — COMPACT LUXURY MATRIX REPAIR (A FÁJL VÉGE)
+   ========================================================================== */
+
+/* 
+   Nyers erővel felülírjuk a korábbi teljes szélességű térképet.
+   Kisebb, fegyelmezett, 700px szélességű exkluzív keretet adunk neki, 
+   és a margin segítségével tökéletesen középre igazítjuk.
+*/
+.monumental-map-passepartout,
+.monumental-map-passepartout.map-narrow { 
+    width: 100% !important; 
+    max-width: 700px !important; /* A térkép gyönyörűen összeszűkül */
+    height: 340px !important; /* Kecses, laposabb asztali magasság */
+    border: 1px solid rgba(163, 180, 164, 0.15) !important; 
+    padding: 12px !important; 
+    background-color: var(--white) !important; 
+    margin: 50px auto 0 auto !important; /* Matematikailag hajszálpontosan középre zárja */
+    display: block !important;
+}
+
+/* --- RESPONSIVE KIIGAZÍTÁS OKOSTELEFONOKRA (650PX ALATT) --- */
+@media (max-width: 650px) {
+    .monumental-map-passepartout,
+    .monumental-map-passepartout.map-narrow { 
+        height: 220px !important; /* Mobilon még kompaktabb, ujjbarát magasság */
+        padding: 4px !important; 
+        margin-top: 30px !important; 
+    }
+}
+
