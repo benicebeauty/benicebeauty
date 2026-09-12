@@ -1468,6 +1468,61 @@ body.architectural-canvas-body {
     100% { -webkit-transform: translate3d(-50%, 0, 0); transform: translate3d(-50%, 0, 0); }
 }
 
+/* ==========================================================================
+   APPLE MARQUEE WIDTH ENFORCEMENT — IPHONE ANIMATION KÉNYSZERÍTŐ (A FÁJL VÉGE)
+   ========================================================================== */
+
+/* 
+   A KRITIKUS JAVÍTÁS: Nyers erővel kényszerítjük a sínt, hogy a képernyő 
+   szélességének a többszöröse (200%-a) legyen mobilon és tableten is.
+   Ezzel megakadályozzuk, hogy a Safari összenyomja a dobozt, így elindul a mozgás!
+*/
+@media (max-width: 1100px) {
+    .marquee-infinite-container {
+        display: block !important;
+        width: 100% !important;
+        overflow: hidden !important;
+    }
+
+    .marquee-moving-track {
+        display: flex !important;
+        flex-direction: row !important;
+        width: 200% !important; /* Kötelezően kétszer akkora, mint a kijelző! */
+        max-width: 200% !important;
+        gap: 0px !important; /* Nullázzuk a vitatkozó térközt a törések ellen */
+        
+        /* Újraindítjuk a hardveresen gyorsított futást */
+        -webkit-animation: iosFullMarquee 24s infinite linear !important;
+        animation: iosFullMarquee 24s infinite linear !important;
+    }
+
+    /* A két belső blokkot hajszálpontosan 50%-os (egy teljes kijelzőnyi) szélességre zárjuk */
+    .marquee-block {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-around !important;
+        width: 50% !important; /* A sín 200%-ának az 50%-a pontosan 100% kijelzőszélesség */
+        max-width: 50% !important;
+        flex-shrink: 0 !important;
+        white-space: nowrap !important;
+    }
+
+    .marquee-text-block {
+        display: inline-block !important;
+        padding: 0 20px !important; /* Biztonságos ujjbegy-távolság a szövegek között futás közben */
+    }
+}
+
+/* Tűéles, fix eltolási tengely, ami nem engedi kiégni a Safari renderelési szálát */
+@-webkit-keyframes iosFullMarquee {
+    0% { -webkit-transform: translate3d(0, 0, 0); transform: translate3d(0, 0, 0); }
+    100% { -webkit-transform: translate3d(-50%, 0, 0); transform: translate3d(-50%, 0, 0); }
+}
+
+@keyframes iosFullMarquee {
+    0% { -webkit-transform: translate3d(0, 0, 0); transform: translate3d(0, 0, 0); }
+    100% { -webkit-transform: translate3d(-50%, 0, 0); transform: translate3d(-50%, 0, 0); }
+}
 
 
 
