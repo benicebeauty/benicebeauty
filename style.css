@@ -367,3 +367,265 @@ transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.25, 1, 0.5, 1), vis
                                                             -webkit-perspective: 1000px !important;
                                                             perspective: 1000px !important;}
                            }
+
+
+
+
+
+/* ==========================================================================
+   BE NICE BEAUTY — FITZROVIA HERO SECTION ENGINE (PART 2 — STYLED BUTTON)
+   ========================================================================== */
+.hero-linear-section {
+    width: 100%;
+    min-height: 100vh;
+    background-color: var(--primary-color) !important; /* Hivatalos zsályazöld selyemháttér */
+    display: flex !important;
+    align-items: center !important;
+    position: relative;
+    overflow: hidden;
+    padding-top: 75px; /* Teret hagy a ragadós fix fejlécnek */
+}
+
+.linear-hero-container {
+    max-width: 1240px !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+    padding: 0 40px !important;
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    gap: 50px !important;
+    position: relative;
+    z-index: 5;
+    padding-bottom: 60px !important; /* Teret biztosít a konténer alján ülő asztali gombnak */
+}
+
+/* --- BAL OLDALI TIPOGRÁFIAI OSZLOP --- */
+.linear-hero-text {
+    width: 48% !important;
+    z-index: 10;
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+.exhibition-tag {
+    display: block !important;
+    font-family: var(--font-sans) !important;
+    font-size: 0.75rem !important;
+    font-weight: 500 !important;
+    letter-spacing: 5px !important;
+    color: var(--accent-color) !important;
+    margin-bottom: 25px !important;
+    text-transform: uppercase !important;
+}
+
+.exhibition-main-title {
+    font-family: var(--font-serif) !important;
+    font-size: 4.4rem !important;
+    font-weight: 300 !important;
+    line-height: 1.15 !important;
+    color: var(--white) !important;
+    margin-bottom: 30px !important;
+}
+
+.exhibition-main-title em {
+    font-style: italic !important;
+    font-weight: 300 !important;
+    color: var(--text-color) !important;
+}
+
+.exhibition-desc {
+    font-family: var(--font-sans) !important;
+    font-size: 1rem !important;
+    font-weight: 300 !important;
+    color: rgba(252, 251, 250, 0.95) !important;
+    line-height: 1.8 !important;
+    margin-bottom: 45px !important;
+}
+
+/* 
+   MEGÚJULT LUXUS CTA GOMB PROTOKOLL:
+   Az 'Our Services Menu' gomb tiszta, fenséges, high-end magazin formázást kapott,
+   amely tökéletesen rímel a Be Nice márkaarculat luxus hangulatára.
+*/
+.exhibition-btn-primary {
+    align-self: flex-start !important;
+    display: inline-block !important;
+    text-decoration: none !important;
+    font-family: var(--font-sans) !important;
+    font-size: 0.74rem !important;
+    font-weight: 500 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 2px !important;
+    white-space: nowrap !important;
+    background-color: var(--white) !important; /* Ragyogó alabástrom felület */
+    color: var(--text-color) !important;
+    padding: 16px 36px !important; /* Szellős, fenséges ujjbegy-párnázás */
+    border: 1px solid rgba(163, 180, 164, 0.2) !important;
+    box-shadow: 0 12px 30px rgba(26, 34, 27, 0.05) !important;
+    margin-top: 15px !important;
+    transition: background-color 0.4s ease, color 0.4s ease, box-shadow 0.4s ease, transform 0.4s ease !important;
+}
+
+/* Hover reakció asztalon: Átvált steril, mély klinikai tónusra */
+.exhibition-btn-primary:hover {
+    background-color: var(--text-color) !important;
+    color: var(--white) !important;
+    box-shadow: 0 8px 20px rgba(26, 34, 27, 0.12) !important;
+    transform: translateY(-2px) !important;
+}
+
+/* --- JOBB OLDALI KÉPES OSZLOP ÉS KERET --- */
+.linear-hero-graphic {
+    width: 46% !important;
+    position: relative !important;
+}
+
+.linear-master-frame {
+    width: 100% !important;
+    height: 65vh !important;
+    min-height: 480px !important;
+    position: relative !important;
+    border: 1px solid rgba(252, 251, 250, 0.3) !important;
+    overflow: hidden !important;
+}
+
+.linear-img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    display: block !important;
+}
+
+/* --- 2. ASZTALI KÖZÉPSŐ ELLIPSZIS GOMB MECHANIKA --- */
+.desktop-hero-ellipse-btn {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    position: absolute !important;
+    bottom: -30px !important; /* Hajszálpontosan a konténer aljára ül rá, félig kilógva */
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: 140px !important;
+    height: 62px !important;
+    border-radius: 50% / 50% !important; /* Tökéletes luxus ellipszis alak */
+    background-color: var(--white) !important;
+    color: var(--text-color) !important;
+    font-family: var(--font-sans) !important;
+    font-size: 0.68rem !important;
+    font-weight: 500 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1.5px !important;
+    text-decoration: none !important;
+    text-align: center !important;
+    line-height: 1.3 !important;
+    box-shadow: 0 15px 35px rgba(26, 34, 27, 0.08) !important;
+    border: 1px solid rgba(163, 180, 164, 0.2) !important;
+    z-index: 100 !important;
+    transition: background-color 0.4s ease, color 0.4s ease, box-shadow 0.4s ease, transform 0.4s ease !important;
+}
+
+.desktop-hero-ellipse-btn:hover {
+    background-color: var(--text-color) !important;
+    color: var(--white) !important;
+    box-shadow: 0 10px 25px rgba(26, 34, 27, 0.1) !important;
+    transform: translateX(-50%) scale(0.95) !important;
+}
+
+/* Szigorúan elrejtjük a mobil gombot asztali nézetben */
+.mobile-hero-floating-btn {
+    display: none !important;
+}
+
+/* ==========================================================================
+   GYÁRI RESPONSIVE MODUL — HERO TABLET & MOBIL ENGINE (1100PX ALATT)
+   ========================================================================== */
+@media (max-width: 1100px) {
+    .hero-linear-section {
+        height: auto !important;
+        padding-top: 100px !important;
+        padding-bottom: 100px !important;
+        min-height: auto !important;
+    }
+
+    .linear-hero-container {
+        flex-direction: column !important;
+        text-align: center !important;
+        gap: 40px !important;
+        padding: 0 40px !important;
+    }
+
+    .linear-hero-text, .linear-hero-graphic {
+        width: 100% !important;
+    }
+
+    .exhibition-btn-primary {
+        align-self: center !important; /* Középre húzza a gombot mobilon */
+        margin-top: 25px !important;
+    }
+
+    .exhibition-main-title {
+        font-size: 2.8rem !important;
+        line-height: 1.2 !important;
+    }
+
+    .exhibition-desc {
+        font-size: 0.95rem !important;
+        margin-bottom: 30px !important;
+    }
+
+    .linear-master-frame {
+        height: 50vh !important;
+        min-height: 340px !important;
+        margin: 0 auto !important;
+    }
+
+    .desktop-hero-ellipse-btn {
+        display: none !important;
+    }
+
+    /* MOBIL FLOATING GOMB PROTOKOLL */
+    .mobile-hero-floating-btn {
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        position: absolute !important;
+        bottom: 25px !important;
+        left: 50% !important;
+        margin-left: -60px !important;
+        width: 120px !important;
+        height: 56px !important;
+        border-radius: 50% / 50% !important;
+        background-color: var(--white) !important;
+        color: var(--text-color) !important;
+        font-family: var(--font-sans) !important;
+        font-size: 0.72rem !important;
+        font-weight: 500 !important;
+        text-transform: uppercase !important;
+        letter-spacing: 1.5px !important;
+        text-decoration: none !important;
+        text-align: center !important;
+        line-height: 1.3 !important;
+        box-shadow: 0 10px 30px rgba(26, 34, 27, 0.15) !important;
+        border: 1px solid rgba(163, 180, 164, 0.2) !important;
+        z-index: 999 !important;
+    }
+}
+
+@media (max-width: 650px) {
+    .linear-hero-container {
+        padding: 0 20px !important;
+    }
+    .exhibition-main-title {
+        font-size: 2.4rem !important;
+    }
+    .linear-master-frame {
+        height: 42vh !important;
+    }
+    .mobile-only-br {
+        display: block !important;
+        content: "" !important;
+    }
+}
+
