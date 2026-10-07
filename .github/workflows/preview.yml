@@ -1,0 +1,178 @@
+name: Publish website preview
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: true
+
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Get website files
+        uses: actions/checkout@v6
+
+      - name: Configure GitHub Pages
+        id: pages
+        uses: actions/configure-pages@v5
+
+      - name: Prepare preview
+        env:
+          PREVIEW_BASE: ${{ steps.pages.outputs.base_path }}
+        run: |
+          python3 - <<'PY'
+          import os
+          import re
+          import shutil
+          from pathlib import Path
+
+          source = Path(".")
+          output = Path("_preview")
+          output.mkdir(exist_ok=True)
+
+          base = os.environ.get("PREVIEW_BASE", "").rstrip("/")
+
+          pages = {
+              "index.html": "",
+              "treatments.html": "treatments",
+              "prices.html": "prices",
+              "about.html": "about-us",
+              "contact.html": "contact",
+              "reviews.html": "reviews",
+              "blog.html": "blog",
+              "rf-microneedling-treatment.html":
+                  "rf-microneedling-treatment",
+              "what-is-a-microcurrent-facial.html":
+                  "what-is-a-microcurrent-facial",
+              "what-is-diamond-microdermabrasion-facial.html":
+                  "what-is-diamond-microdermabrasion-facial",
+              "how-does-led-light-therapy-work.html":
+                  "how-does-led-light-therapy-work",
+              "chemical-peel-face-treatment.html":
+                  "chemical-peel-face-treatment",
+              "the-benefit-facial-treatments.html":
+                  "the-benefit-facial-treatments",
+          }
+
+          assets = [
+              "style.css",
+              "script.js",
+              "prices-data.js",
+              "reviews-data.js",
+          ]
+
+          for filename in [*pages, *assets]:
+              if not (source / filename).is_file():
+                  raise SystemExit(
+                      f"Missing website file: {filename}"
+                  )
+
+          def adapt_path(match):
+              attribute, quote, path = match.groups()
+              return (
+                  f"{attribute}={quote}"
+                  f"{base}{path}{quote}"
+              )
+
+          for filename, route in pages.items():
+              html = (source / filename).read_text(
+                  encoding="utf-8-sig"
+              )
+
+              # Adapt root-relative URLs for GitHub Pages.
+              html = re.sub(
+                  r"""(?<![\w-])(href|src|action)\s*=\s*(["'])(/(?!/)[^"']*)\2""",
+                  adapt_path,
+                  html,
+                  flags=re.IGNORECASE,
+              )
+
+              # Keep every preview page out of search results.
+              html = re.sub(
+                  r"""<meta\b(?=[^>]*\bname\s*=\s*["']robots["'])[^>]*>""",
+                  "",
+                  html,
+                  flags=re.IGNORECASE,
+              )
+
+              html = re.sub(
+                  r"</head\s*>",
+                  '<meta name="robots" content="noindex">\n</head>',
+                  html,
+                  count=1,
+                  flags=re.IGNORECASE,
+              )
+
+              # Disable form submission in the static preview.
+              def disable_submit(match):
+                  tag = match.group(0)
+                  if re.search(
+                      r"\bdisabled\b", tag, re.IGNORECASE
+                  ):
+                      return tag
+                  return tag[:-1] + " disabled>"
+
+              html = re.sub(
+                  r"""<(?:button|input)\b(?=[^>]*\btype\s*=\s*["']submit["'])[^>]*>""",
+                  disable_submit,
+                  html,
+                  flags=re.IGNORECASE,
+              )
+
+              # Retain direct HTML URLs for convenient previews.
+              (output / filename).write_text(
+                  html, encoding="utf-8"
+              )
+
+              # Create clean URLs without requiring .htaccess.
+              if route:
+                  folder = output / route
+                  folder.mkdir(parents=True, exist_ok=True)
+                  (folder / "index.html").write_text(
+                      html, encoding="utf-8"
+                  )
+
+          for filename in assets:
+              shutil.copy2(
+                  source / filename,
+                  output / filename,
+              )
+
+          for folder_name in ["images", "images1"]:
+              folder = source / folder_name
+              if folder.is_dir():
+                  shutil.copytree(
+                      folder,
+                      output / folder_name,
+                      dirs_exist_ok=True,
+                  )
+
+          # PHP files and private configuration are not published.
+          (output / "robots.txt").write_text(
+              "User-agent: *\nDisallow:\n",
+              encoding="utf-8",
+          )
+          PY
+
+      - name: Upload preview
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: _preview
+
+      - name: Publish preview
+        id: deployment
+        uses: actions/deploy-pages@v4
