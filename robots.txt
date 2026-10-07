@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://benicebeauty.co.uk/sitemap.xml

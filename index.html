@@ -4,8 +4,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="robots" content="noindex">
-  <title>Be Nice Beauty | Fitzrovia, London</title>
+  <meta name="robots" content="noindex">
+<link rel="canonical" href="https://benicebeauty.co.uk/">
+  <title>Beauty Salon in Fitzrovia, London | Be Nice Beauty</title>
+
+  <meta name="description"
+    content="Discover personalised facials, aesthetic treatments, laser hair reduction and waxing at Be Nice Beauty in Fitzrovia, London. Explore treatments and book online.">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,7 +21,71 @@
   <!-- Font Awesome – social icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="/style.css">
+  <!-- Structured data: website and beauty salon -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://benicebeauty.co.uk/#website",
+        "url": "https://benicebeauty.co.uk/",
+        "name": "Be Nice Beauty",
+        "inLanguage": "en-GB",
+        "publisher": {
+          "@id": "https://benicebeauty.co.uk/#salon"
+        }
+      },
+      {
+        "@type": "BeautySalon",
+        "@id": "https://benicebeauty.co.uk/#salon",
+        "name": "Be Nice Beauty",
+        "url": "https://benicebeauty.co.uk/",
+        "description": "Beauty salon in Fitzrovia, London, offering personalised facials, aesthetic treatments, laser hair reduction and waxing.",
+        "telephone": "+447532800146",
+        "email": "info@benicebeauty.co.uk",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "152 New Cavendish Street",
+          "addressLocality": "London",
+          "postalCode": "W1W 6YL",
+          "addressCountry": "GB"
+        },
+        "hasMap": "https://maps.app.goo.gl/29rsQRJj4QyKzB9P6",
+        "sameAs": [
+          "https://www.instagram.com/benicebeautylondon/",
+          "https://www.facebook.com/BeNiceBeautyLondon/",
+          "https://www.fresha.com/en-GB/a/be-nice-beauty-london-152-new-cavendish-street-cf2kha14"
+        ],
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+              "Monday",
+              "Tuesday",
+              "Thursday",
+              "Friday"
+            ],
+            "opens": "11:00",
+            "closes": "20:00"
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+              "Wednesday",
+              "Saturday",
+              "Sunday"
+            ],
+            "opens": "00:00",
+            "closes": "00:00"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
 </head>
 
 <body>
@@ -26,116 +94,102 @@
        HEADER
   ========================================== -->
 
- <header class="site-header" id="siteHeader">
+  <header class="site-header" id="siteHeader">
 
     <!-- TOP BAR -->
     <div class="top-bar" id="topBar">
-        <div class="header-container top-bar-inner">
+      <div class="header-container top-bar-inner">
 
-            <div class="top-contact">
-                <span>Fitzrovia, London</span>
-                <span class="top-divider" aria-hidden="true"></span>
+        <div class="top-contact">
+          <span>Fitzrovia, London</span>
+          <span class="top-divider" aria-hidden="true"></span>
 
-                <a href="tel:+447532800146">
-                    +44 7532 800146
-                </a>
-            </div>
-
-            <div class="top-social">
-                <a href="https://www.instagram.com/benicebeautylondon/"
-                    aria-label="Instagram"
-                    target="_blank"
-                    rel="noopener noreferrer">
-                    <i class="fa-brands fa-instagram" aria-hidden="true"></i>
-                </a>
-
-                <a href="https://www.facebook.com/BeNiceBeautyLondon/"
-                    aria-label="Facebook"
-                    target="_blank"
-                    rel="noopener noreferrer">
-                    <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
-                </a>
-            </div>
-
+          <a href="tel:+447532800146">
+            +44 7532 800146
+          </a>
         </div>
+
+        <div class="top-social">
+          <a href="https://www.instagram.com/benicebeautylondon/" aria-label="Instagram" target="_blank"
+            rel="noopener noreferrer">
+            <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+          </a>
+
+          <a href="https://www.facebook.com/BeNiceBeautyLondon/" aria-label="Facebook" target="_blank"
+            rel="noopener noreferrer">
+            <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
+          </a>
+        </div>
+
+      </div>
     </div>
 
     <!-- DESKTOP NAVIGATION -->
     <div class="nav-bar">
-        <div class="header-container nav-inner">
+      <div class="header-container nav-inner">
 
-            <a href="index.html" class="brand-logo">
-                BE NICE BEAUTY
-            </a>
+        <a href="/" class="brand-logo">
+          BE NICE BEAUTY
+        </a>
 
-            <nav class="desktop-nav" aria-label="Main navigation">
-                <a href="index.html" class="active" aria-current="page">Home</a>
-                <a href="treatments.html">Treatments</a>
-                <a href="blog.html">Blog</a>
-                <a href="prices.html">Prices</a>
+        <nav class="desktop-nav" aria-label="Main navigation">
+          <a href="/" class="active" aria-current="page">Home</a>
+          <a href="treatments.html">Treatments</a>
+          <a href="blog.html">Blog</a>
+          <a href="prices.html">Prices</a>
 
-                <a href="https://www.fresha.com/en-GB/a/be-nice-beauty-london-152-new-cavendish-street-cf2kha14/vouchers"
-                    target="_blank"
-                    rel="noopener noreferrer">
-                    Gift Voucher
-                </a>
+          <a href="https://www.fresha.com/en-GB/a/be-nice-beauty-london-152-new-cavendish-street-cf2kha14/vouchers"
+            target="_blank" rel="noopener noreferrer">
+            Gift Voucher
+          </a>
 
-                <a href="about.html">About Us</a>
-                <a href="contact.html">Contact</a>
-                <a href="reviews.html">Reviews</a>
-            </nav>
+          <a href="about.html">About Us</a>
+          <a href="contact.html">Contact</a>
+          <a href="reviews.html">Reviews</a>
+        </nav>
 
-            <a href="https://www.fresha.com/en-GB/a/be-nice-beauty-london-152-new-cavendish-street-cf2kha14"
-                class="book-button"
-                target="_blank"
-                rel="noopener noreferrer">
-                Book Online
-            </a>
+        <a href="https://www.fresha.com/en-GB/a/be-nice-beauty-london-152-new-cavendish-street-cf2kha14"
+          class="book-button" target="_blank" rel="noopener noreferrer">
+          Book Online
+        </a>
 
-            <button class="menu-toggle"
-                id="menuToggle"
-                type="button"
-                aria-label="Open menu"
-                aria-expanded="false"
-                aria-controls="mobileNav">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+        <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open menu" aria-expanded="false"
+          aria-controls="mobileNav">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
 
-        </div>
+      </div>
     </div>
 
     <!-- MOBILE NAVIGATION -->
     <div class="mobile-nav" id="mobileNav">
 
-        <nav aria-label="Mobile navigation">
-            <a href="index.html" class="active" aria-current="page">Home</a>
-            <a href="treatments.html">Treatments</a>
-            <a href="blog.html">Blog</a>
-            <a href="prices.html">Prices</a>
+      <nav aria-label="Mobile navigation">
+        <a href="/" class="active" aria-current="page">Home</a>
+        <a href="treatments.html">Treatments</a>
+        <a href="blog.html">Blog</a>
+        <a href="prices.html">Prices</a>
 
-            <a href="https://www.fresha.com/en-GB/a/be-nice-beauty-london-152-new-cavendish-street-cf2kha14/vouchers"
-                target="_blank"
-                rel="noopener noreferrer">
-                Gift Voucher
-            </a>
-
-            <a href="about.html">About Us</a>
-            <a href="contact.html">Contact</a>
-            <a href="reviews.html">Reviews</a>
-        </nav>
-
-        <a href="https://www.fresha.com/en-GB/a/be-nice-beauty-london-152-new-cavendish-street-cf2kha14"
-            class="mobile-book-button"
-            target="_blank"
-            rel="noopener noreferrer">
-            Book Online
+        <a href="https://www.fresha.com/en-GB/a/be-nice-beauty-london-152-new-cavendish-street-cf2kha14/vouchers"
+          target="_blank" rel="noopener noreferrer">
+          Gift Voucher
         </a>
+
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+        <a href="reviews.html">Reviews</a>
+      </nav>
+
+      <a href="https://www.fresha.com/en-GB/a/be-nice-beauty-london-152-new-cavendish-street-cf2kha14"
+        class="mobile-book-button" target="_blank" rel="noopener noreferrer">
+        Book Online
+      </a>
 
     </div>
 
-</header>
+  </header>
   <!-- =========================================
        HERO
   ========================================== -->
@@ -218,7 +272,7 @@
           <a href="treatments.html" class="treatment-card reveal reveal-delay-1">
 
             <div class="treatment-image">
-              <img src="images/facial-treatment.webp" alt="Facial treatments at Be Nice Beauty">
+              <img src="/images/facial-treatment.webp" alt="Facial treatments at Be Nice Beauty">
             </div>
 
             <div class="treatment-info">
@@ -241,7 +295,7 @@
           <a href="treatments.html" class="treatment-card reveal reveal-delay-2">
 
             <div class="treatment-image">
-              <img src="images/aesthetic-treatment.webp" alt="Facial treatments at Be Nice Beauty">
+              <img src="/images/aesthetic-treatment.webp" alt="Aesthetic skin treatment">
             </div>
 
             <div class="treatment-info">
@@ -264,7 +318,7 @@
           <a href="treatments.html" class="treatment-card reveal reveal-delay-1">
 
             <div class="treatment-image">
-              <img src="images/Laser-treatment.webp" alt="Facial treatments at Be Nice Beauty">
+              <img src="/images/Laser-treatment.webp" alt="Laser hair reduction treatment">
             </div>
 
             <div class="treatment-info">
@@ -287,7 +341,7 @@
           <a href="treatments.html" class="treatment-card reveal reveal-delay-2">
 
             <div class="treatment-image">
-              <img src="images/waxing-treatment.webp" alt="Facial treatments at Be Nice Beauty">
+              <img src="/images/waxing-treatment.webp" alt="Waxing treatment">
             </div>
 
             <div class="treatment-info">
@@ -330,7 +384,7 @@
 
         <!-- IMAGE – later -->
         <div class="about-image reveal-image">
-          <img src="images/spa.png" alt="">
+          <img src="/images/spa.png" alt="">
         </div>
 
 
@@ -416,7 +470,7 @@
         <article class="featured-item featured-item--one reveal">
 
           <div class="featured-image">
-            <img src="images/deep-cleansing-with-manual-extraction.webp" alt="Facial treatment at Be Nice Beauty">
+            <img src="/images/deep-cleansing-with-manual-extraction.webp" alt="Facial treatment at Be Nice Beauty">
           </div>
 
           <div class="featured-copy">
@@ -458,7 +512,7 @@
           </div>
 
           <div class="featured-image">
-            <img src="images/microneedling-treatment.webp" alt="Aesthetic treatment at Be Nice Beauty">
+            <img src="/images/microneedling-treatment.webp" alt="Aesthetic treatment at Be Nice Beauty">
           </div>
 
         </article>
@@ -468,7 +522,7 @@
         <article class="featured-item featured-item--three reveal">
 
           <div class="featured-image">
-            <img src="images/hydrofacial.webp" alt="Laser hair removal at Be Nice Beauty">
+            <img src="/images/hydrofacial.webp" alt="HydroFacial cleansing and hydration treatment">
           </div>
 
           <div class="featured-copy">
@@ -496,7 +550,7 @@
 
 
 
-    
+
 
     <!-- =========================================
      CLIENT REVIEWS
@@ -709,7 +763,7 @@
 
                 <div>
                   <p>Monday – Tuesday</p>
-                  <p>12:00 – 20:00</p>
+                  <p>11:00 – 20:00</p>
                 </div>
 
                 <div>
@@ -719,7 +773,7 @@
 
                 <div>
                   <p>Thursday – Friday</p>
-                  <p>12:00 – 20:00</p>
+                  <p>11:00 – 20:00</p>
                 </div>
 
                 <div>
@@ -921,118 +975,113 @@
 
     </section>
 
- </main>
+  </main>
 
-    <!-- =========================================
+  <!-- =========================================
      FOOTER
 ========================================== -->
-<footer class="site-footer">
+  <footer class="site-footer">
 
     <div class="footer-container">
 
-        <div class="footer-main">
+      <div class="footer-main">
 
-            <!-- BRAND -->
-            <div class="footer-brand">
-                <a href="index.html" class="footer-logo">
-                    Be Nice Beauty
-                </a>
+        <!-- BRAND -->
+        <div class="footer-brand">
+          <a href="/" class="footer-logo">
+            Be Nice Beauty
+          </a>
 
-                <p>
-                    Thoughtful beauty treatments designed
-                    to help you feel your best.
-                </p>
-            </div>
-
-            <!-- NAVIGATION -->
-            <div class="footer-column">
-                <span class="footer-label">Explore</span>
-
-                <nav class="footer-links" aria-label="Footer navigation">
-                    <a href="index.html">Home</a>
-                    <a href="treatments.html">Treatments</a>
-                    <a href="blog.html">Blog</a>
-                    <a href="prices.html">Prices</a>
-
-                    <a href="https://www.fresha.com/en-GB/a/be-nice-beauty-london-152-new-cavendish-street-cf2kha14/vouchers"
-                        target="_blank"
-                        rel="noopener noreferrer">
-                        Gift Voucher
-                    </a>
-
-                    <a href="about.html">About Us</a>
-                    <a href="contact.html">Contact</a>
-                    <a href="reviews.html">Reviews</a>
-                </nav>
-            </div>
-
-            <!-- TREATMENT CATEGORIES -->
-            <div class="footer-column">
-                <span class="footer-label">Treatments</span>
-
-                <nav class="footer-links" aria-label="Treatment categories">
-                    <a href="treatments.html#facial">Facial</a>
-                    <a href="treatments.html#aesthetic">Aesthetic</a>
-                    <a href="treatments.html#laser">Laser Hair Reduction</a>
-                    <a href="treatments.html#waxing">Waxing</a>
-                </nav>
-            </div>
-
-            <!-- CONTACT -->
-            <div class="footer-column footer-contact">
-                <span class="footer-label">Visit us</span>
-
-                <p>
-                    152 New Cavendish Street<br>
-                    London, W1W 6YL
-                </p>
-
-                <a href="tel:+447532800146">
-                    +44 7532 800146
-                </a>
-
-                <a href="mailto:info@benicebeauty.co.uk">
-                    info@benicebeauty.co.uk
-                </a>
-            </div>
-
+          <p>
+            Thoughtful beauty treatments designed
+            to help you feel your best.
+          </p>
         </div>
 
-        <div class="footer-bottom">
+        <!-- NAVIGATION -->
+        <div class="footer-column">
+          <span class="footer-label">Explore</span>
 
-            <p>
-                © 2026 Be Nice Beauty. All rights reserved.
-            </p>
+          <nav class="footer-links" aria-label="Footer navigation">
+            <a href="/">Home</a>
+            <a href="treatments.html">Treatments</a>
+            <a href="blog.html">Blog</a>
+            <a href="prices.html">Prices</a>
 
-            <div class="footer-legal">
-                <!-- Replace these links when the legal pages are ready. -->
-                <a href="#">Privacy Policy</a>
-                <a href="#">Terms &amp; Conditions</a>
-            </div>
+            <a href="https://www.fresha.com/en-GB/a/be-nice-beauty-london-152-new-cavendish-street-cf2kha14/vouchers"
+              target="_blank" rel="noopener noreferrer">
+              Gift Voucher
+            </a>
 
-            <div class="footer-socials">
-                <a href="https://www.instagram.com/benicebeautylondon/"
-                    aria-label="Instagram"
-                    target="_blank"
-                    rel="noopener noreferrer">
-                    Instagram ↗
-                </a>
-
-                <a href="https://www.facebook.com/BeNiceBeautyLondon/"
-                    aria-label="Facebook"
-                    target="_blank"
-                    rel="noopener noreferrer">
-                    Facebook ↗
-                </a>
-            </div>
-
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact</a>
+            <a href="reviews.html">Reviews</a>
+          </nav>
         </div>
+
+        <!-- TREATMENT CATEGORIES -->
+        <div class="footer-column">
+          <span class="footer-label">Treatments</span>
+
+          <nav class="footer-links" aria-label="Treatment categories">
+            <a href="treatments.html#facial">Facial</a>
+            <a href="treatments.html#aesthetic">Aesthetic</a>
+            <a href="treatments.html#laser">Laser Hair Reduction</a>
+            <a href="treatments.html#waxing">Waxing</a>
+          </nav>
+        </div>
+
+        <!-- CONTACT -->
+        <div class="footer-column footer-contact">
+          <span class="footer-label">Visit us</span>
+
+          <p>
+            152 New Cavendish Street<br>
+            London, W1W 6YL
+          </p>
+
+          <a href="tel:+447532800146">
+            +44 7532 800146
+          </a>
+
+          <a href="mailto:info@benicebeauty.co.uk">
+            info@benicebeauty.co.uk
+          </a>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+
+        <p>
+          © 2026 Be Nice Beauty. All rights reserved.
+        </p>
+
+        <div class="footer-legal">
+          <!-- Replace these links when the legal pages are ready. -->
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms &amp; Conditions</a>
+        </div>
+
+        <div class="footer-socials">
+          <a href="https://www.instagram.com/benicebeautylondon/" aria-label="Instagram" target="_blank"
+            rel="noopener noreferrer">
+            Instagram ↗
+          </a>
+
+          <a href="https://www.facebook.com/BeNiceBeautyLondon/" aria-label="Facebook" target="_blank"
+            rel="noopener noreferrer">
+            Facebook ↗
+          </a>
+        </div>
+
+      </div>
 
     </div>
 
-</footer>
+  </footer>
 
-  <script src="script.js"></script>
+  <script src="/script.js"></script>
 
 </body>
 
