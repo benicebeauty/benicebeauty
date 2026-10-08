@@ -81,8 +81,41 @@ jobs:
                       f"Missing website file: {filename}"
                   )
 
-          def adapt_path(match):
+                   def adapt_path(match):
               attribute, quote, path = match.groups()
+
+              # Leave external links and same-page anchors unchanged.
+              if (
+                  not path
+                  or path.startswith(("#", "//", "?"))
+                  or re.match(
+                      r"^[a-zA-Z][a-zA-Z0-9+.-]*:", path
+                  )
+              ):
+                  return match.group(0)
+
+              # Remove an existing preview prefix before rebuilding.
+              if base and (
+                  path == base
+                  or path.startswith(base + "/")
+              ):
+                  path = path[len(base):] or "/"
+
+              parts = re.split(r"([?#].*)", path, maxsplit=1)
+              filename = parts[0].lstrip("/")
+              suffix = parts[1] if len(parts) > 1 else ""
+
+              if filename.startswith("./"):
+                  filename = filename[2:]
+
+              # Convert known HTML links to their public page routes.
+              if attribute.lower() == "href" and filename in pages:
+                  route = pages[filename]
+                  path = "/" + route + "/" if route else "/"
+                  path += suffix
+              else:
+                  path = "/" + filename + suffix
+
               return (
                   f"{attribute}={quote}"
                   f"{base}{path}{quote}"
@@ -94,8 +127,9 @@ jobs:
               )
 
               # Adapt root-relative URLs for GitHub Pages.
+                          # Adapt local links and assets for GitHub Pages.
               html = re.sub(
-                  r"""(?<![\w-])(href|src|action)\s*=\s*(["'])(/(?!/)[^"']*)\2""",
+                  r"""(?<![\w-])(href|src|action)\s*=\s*(["'])([^"']*)\2""",
                   adapt_path,
                   html,
                   flags=re.IGNORECASE,
