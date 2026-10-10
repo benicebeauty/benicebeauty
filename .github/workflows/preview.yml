@@ -81,10 +81,10 @@ jobs:
                       f"Missing website file: {filename}"
                   )
 
-                   def adapt_path(match):
+          def adapt_path(match):
               attribute, quote, path = match.groups()
 
-              # Leave external links and same-page anchors unchanged.
+              # Preserve external links and same-page anchors.
               if (
                   not path
                   or path.startswith(("#", "//", "?"))
@@ -94,7 +94,7 @@ jobs:
               ):
                   return match.group(0)
 
-              # Remove an existing preview prefix before rebuilding.
+              # Avoid adding the preview prefix twice.
               if base and (
                   path == base
                   or path.startswith(base + "/")
@@ -108,7 +108,7 @@ jobs:
               if filename.startswith("./"):
                   filename = filename[2:]
 
-              # Convert known HTML links to their public page routes.
+              # Convert known HTML links to clean page URLs.
               if attribute.lower() == "href" and filename in pages:
                   route = pages[filename]
                   path = "/" + route + "/" if route else "/"
@@ -121,13 +121,20 @@ jobs:
                   f"{base}{path}{quote}"
               )
 
+          def disable_submit(match):
+              tag = match.group(0)
+              if re.search(
+                  r"\bdisabled\b", tag, re.IGNORECASE
+              ):
+                  return tag
+              return tag[:-1] + " disabled>"
+
           for filename, route in pages.items():
               html = (source / filename).read_text(
                   encoding="utf-8-sig"
               )
 
-              # Adapt root-relative URLs for GitHub Pages.
-                          # Adapt local links and assets for GitHub Pages.
+              # Adapt local links and assets for GitHub Pages.
               html = re.sub(
                   r"""(?<![\w-])(href|src|action)\s*=\s*(["'])([^"']*)\2""",
                   adapt_path,
@@ -135,7 +142,7 @@ jobs:
                   flags=re.IGNORECASE,
               )
 
-              # Keep every preview page out of search results.
+              # Keep preview pages out of search results.
               html = re.sub(
                   r"""<meta\b(?=[^>]*\bname\s*=\s*["']robots["'])[^>]*>""",
                   "",
@@ -152,14 +159,6 @@ jobs:
               )
 
               # Disable form submission in the static preview.
-              def disable_submit(match):
-                  tag = match.group(0)
-                  if re.search(
-                      r"\bdisabled\b", tag, re.IGNORECASE
-                  ):
-                      return tag
-                  return tag[:-1] + " disabled>"
-
               html = re.sub(
                   r"""<(?:button|input)\b(?=[^>]*\btype\s*=\s*["']submit["'])[^>]*>""",
                   disable_submit,
@@ -167,12 +166,12 @@ jobs:
                   flags=re.IGNORECASE,
               )
 
-              # Retain direct HTML URLs for convenient previews.
+              # Preserve direct HTML URLs.
               (output / filename).write_text(
                   html, encoding="utf-8"
               )
 
-              # Create clean URLs without requiring .htaccess.
+              # Create clean URLs without .htaccess.
               if route:
                   folder = output / route
                   folder.mkdir(parents=True, exist_ok=True)
