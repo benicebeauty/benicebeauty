@@ -1598,3 +1598,51 @@
     initSite();
   }
 })();
+
+
+/* ==========================================
+   GOOGLE MAP — CLICK TO LOAD
+========================================== */
+
+(() => {
+  function initClickToLoadMaps() {
+    document.querySelectorAll("[data-map-consent]").forEach((container) => {
+      const button = container.querySelector("[data-map-load]");
+
+      if (!button || button.dataset.mapReady === "true") {
+        return;
+      }
+
+      button.dataset.mapReady = "true";
+
+      button.addEventListener("click", () => {
+        const iframe = document.createElement("iframe");
+
+        iframe.title =
+          "Be Nice Beauty — 152 New Cavendish Street, London W1W 6YL";
+
+        iframe.referrerPolicy = "no-referrer";
+        iframe.allowFullscreen = true;
+        iframe.tabIndex = 0;
+
+        iframe.src =
+          "https://www.google.com/maps?q=" +
+          "152+New+Cavendish+Street,+London,+W1W+6YL&output=embed";
+
+        container.replaceChildren(iframe);
+
+        iframe.focus({ preventScroll: true });
+      }, { once: true });
+    });
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener(
+      "DOMContentLoaded",
+      initClickToLoadMaps,
+      { once: true }
+    );
+  } else {
+    initClickToLoadMaps();
+  }
+})();

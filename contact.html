@@ -523,17 +523,62 @@
         </figure>
 
         <!-- MAP -->
-        <div class="bn-contact-map reveal">
-          <iframe
-            src="https://www.google.com/maps?q=152+New+Cavendish+Street,+London,+W1W+6YL&output=embed"
-            title="Be Nice Beauty at 152 New Cavendish Street, London W1W 6YL"
-            width="1100"
-            height="380"
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            allowfullscreen>
-          </iframe>
-        </div>
+        <div class="bn-map-consent reveal" data-map-consent>
+  <div class="bn-map-preview">
+    <svg class="bn-map-pin"
+      xmlns="http://www.w3.org/2000/svg"
+      width="36" height="36"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="1.2"
+      aria-hidden="true">
+      <path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z"/>
+      <circle cx="12" cy="10" r="2.5"/>
+    </svg>
+
+    <p class="bn-map-eyebrow">FIND US IN FITZROVIA</p>
+    <h3 class="bn-map-title">Be Nice Beauty</h3>
+
+    <p class="bn-map-address">
+      152 New Cavendish Street<br>
+      London W1W 6YL
+    </p>
+
+    <div class="bn-map-actions">
+      <button
+        class="bn-map-load"
+        type="button"
+        data-map-load
+        aria-describedby="bn-map-disclosure">
+        Load Google Map
+        <span aria-hidden="true">↗</span>
+      </button>
+
+      <a class="bn-map-directions"
+        href="https://www.google.com/maps/search/?api=1&query=Be+Nice+Beauty+152+New+Cavendish+Street+London+W1W+6YL"
+        target="_blank"
+        rel="noopener noreferrer">
+        Get Directions
+        <span aria-hidden="true">↗</span>
+      </a>
+    </div>
+
+    <p class="bn-map-disclosure" id="bn-map-disclosure">
+      Loading the map connects to Google and may allow Google
+      to use cookies and process your device information.
+      <a href="https://policies.google.com/privacy"
+        target="_blank"
+        rel="noopener noreferrer">Google Privacy Policy</a>.
+    </p>
+
+    <noscript>
+      <p class="bn-map-disclosure">
+        Use Get Directions to view our location on Google Maps.
+      </p>
+    </noscript>
+  </div>
+</div>
 
         <!-- TRAVEL INFORMATION -->
         <div class="bn-contact-travel">
