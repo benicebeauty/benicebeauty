@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="14" fill="#A3B4A4"/>
+
+  <g fill="#4A3830">
+    <path fill-rule="evenodd" d="
+      M10 15H23
+      C30 15 34 18 34 23
+      C34 27 32 30 28 31
+      C33 32 36 35 36 40
+      C36 46 31 49 23 49
+      H10V47H14V17H10Z
+
+      M19 18V29H23
+      C27 29 29 27 29 23
+      C29 20 27 18 23 18Z
+
+      M19 32V46H23
+      C28 46 31 44 31 40
+      C31 35 28 32 23 32Z
+    "/>
+
+    <path d="
+      M36 15H43L53 39V17H49V15H60V17H56
+      V49H53L42 23V47H46V49H35V47H39
+      V17H36Z
+    "/>
+  </g>
+</svg>
