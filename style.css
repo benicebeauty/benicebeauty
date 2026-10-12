@@ -6369,9 +6369,9 @@ button:focus-visible {
 
 .bn-about-hero-layout {
   display: grid;
-  grid-template-columns: minmax(0, 1.2fr) minmax(0, .85fr);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr);
   align-items: center;
-  gap: 65px;
+  gap: 45px;
 }
 
 .bn-about-hero-copy,
@@ -6550,12 +6550,16 @@ button:focus-visible {
     0 14px 32px rgba(74, 56, 48, .08);
 }
 
-.bn-about-portrait>img {
-  aspect-ratio: 4 / 5;
+.bn-about-portrait > img {
+  aspect-ratio: auto;
+  height: auto;
+  object-fit: contain;
 }
 
-.bn-about-salon-photo>img {
-  aspect-ratio: 5 / 4;
+.bn-about-salon-photo > img {
+  aspect-ratio: auto;
+  height: auto;
+  object-fit: contain;
 }
 
 /* ==========================================
@@ -6789,9 +6793,9 @@ button:focus-visible {
 
 .bn-about-space-layout {
   display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
   align-items: center;
-  gap: 65px;
+  gap: 35px;
 }
 
 .bn-about-salon-photo,
@@ -7151,10 +7155,9 @@ button:focus-visible {
     justify-self: center;
   }
 
-  .bn-about-photo-placeholder--salon,
-  .bn-about-salon-photo>img {
-    aspect-ratio: 3 / 2;
-  }
+  .bn-about-photo-placeholder--salon {
+  aspect-ratio: 3 / 2;
+}
 
   .bn-about-space-copy {
     max-width: 650px;
@@ -7301,10 +7304,9 @@ button:focus-visible {
     font-size: 27px;
   }
 
-  .bn-about-photo-placeholder--salon,
-  .bn-about-salon-photo>img {
-    aspect-ratio: 4 / 3;
-  }
+  .bn-about-photo-placeholder--salon {
+  aspect-ratio: 4 / 3;
+}
 
   .bn-about-philosophy-inner>p:last-child {
     font-size: 14px;
@@ -11375,5 +11377,378 @@ a.bn-blog-read:focus-visible>span {
 
   .bn-treatment-faq-heading h2 {
     font-size: 30px;
+  }
+}
+
+
+
+
+
+
+/* ==========================================
+   PRIVACY & COOKIES POLICY
+========================================== */
+
+.privacy-page {
+  background: var(--ivory);
+  color: var(--chocolate);
+}
+
+.bn-privacy-container {
+  width: min(1100px, calc(100% - 80px));
+  margin-inline: auto;
+}
+
+.bn-privacy-hero {
+  padding-block:
+    var(--bn-page-intro-top, 80px)
+    var(--bn-page-intro-bottom, 60px);
+}
+
+.bn-privacy-eyebrow {
+  font-family: var(--font-sans);
+  font-size: var(--bn-eyebrow-size, 11px);
+  font-weight: 500;
+  line-height: 1.6;
+  letter-spacing: var(--bn-eyebrow-tracking, .16em);
+  color: var(--deep-green);
+}
+
+.bn-privacy-hero .bn-privacy-eyebrow {
+  margin-bottom: var(--bn-title-label-gap, 22px);
+}
+
+.bn-privacy-hero h1 {
+  font-family: var(--font-serif);
+  font-size: var(--bn-page-title-size, clamp(44px, 5vw, 68px));
+  font-weight: 400;
+  line-height: var(--bn-page-title-leading, 1.1);
+  letter-spacing: var(--bn-page-title-tracking, -.035em);
+}
+
+.bn-privacy-hero h1 em,
+.bn-privacy-help h2 em {
+  color: var(--deep-green);
+  font-weight: 400;
+}
+
+.bn-privacy-intro {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 32px;
+  margin-top: var(--bn-intro-copy-gap, 30px);
+  padding-top: 26px;
+  border-top: 1px solid var(--sage);
+}
+
+.bn-privacy-intro > p:first-child {
+  max-width: 570px;
+  font-size: var(--bn-intro-text-size, 15px);
+  line-height: var(--bn-intro-text-leading, 1.85);
+  color: var(--chocolate-soft);
+}
+
+.bn-privacy-updated {
+  flex-shrink: 0;
+  font-size: 12px;
+  line-height: 1.8;
+  color: var(--chocolate-soft);
+}
+
+.bn-privacy-updated time {
+  display: block;
+  color: var(--deep-green);
+}
+
+.bn-privacy-layout {
+  display: grid;
+  grid-template-columns: 240px minmax(0, 1fr);
+  align-items: start;
+  gap: 70px;
+  padding-bottom: 80px;
+}
+
+.bn-privacy-index {
+  padding-top: 12px;
+}
+
+.bn-privacy-index > p {
+  margin-bottom: 20px;
+}
+
+.bn-privacy-index ol {
+  display: grid;
+  gap: 12px;
+  list-style: none;
+  counter-reset: policy-section;
+}
+
+.bn-privacy-index li {
+  counter-increment: policy-section;
+}
+
+.bn-privacy-index a {
+  display: grid;
+  grid-template-columns: 24px minmax(0, 1fr);
+  gap: 10px;
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--chocolate-soft);
+}
+
+.bn-privacy-index a::before {
+  content: counter(policy-section, decimal-leading-zero);
+  color: var(--deep-green);
+  font-size: 11px;
+  padding-top: 2px;
+}
+
+.bn-privacy-content {
+  min-width: 0;
+}
+
+.bn-privacy-section {
+  position: relative;
+  padding-block: 32px 36px;
+  border-top: 1px solid var(--sage);
+  scroll-margin-top:
+    calc(var(--topbar-height) + var(--nav-height) + 24px);
+}
+
+.bn-privacy-number {
+  display: block;
+  margin-bottom: 12px;
+  font-family: var(--font-serif);
+  font-size: 15px;
+  font-style: italic;
+  color: var(--deep-green);
+}
+
+.bn-privacy-section h2 {
+  margin-bottom: 20px;
+  font-family: var(--font-serif);
+  font-size: clamp(27px, 3vw, 32px);
+  font-weight: 400;
+  line-height: 1.25;
+  letter-spacing: -.02em;
+}
+
+.bn-privacy-section h3 {
+  margin: 26px 0 10px;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--deep-green);
+}
+
+.bn-privacy-section p,
+.bn-privacy-section li,
+.bn-privacy-section dd {
+  font-size: 14px;
+  line-height: 1.9;
+  color: var(--chocolate-soft);
+}
+
+.bn-privacy-section p + p,
+.bn-privacy-section ul + p {
+  margin-top: 16px;
+}
+
+.bn-privacy-section ul {
+  margin: 14px 0 18px;
+  padding-left: 20px;
+}
+
+.bn-privacy-section li + li {
+  margin-top: 8px;
+}
+
+.bn-privacy-section strong {
+  color: var(--chocolate);
+  font-weight: 600;
+}
+
+.bn-privacy-content a {
+  color: var(--deep-green);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+  overflow-wrap: anywhere;
+}
+
+.bn-privacy-content a:hover,
+.bn-privacy-index a:hover {
+  color: var(--chocolate);
+}
+
+.bn-privacy-index a:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.bn-privacy-external {
+  font-size: 11px;
+}
+
+.bn-privacy-contact {
+  display: grid;
+  gap: 7px;
+  margin-block: 22px;
+  padding: 22px 24px;
+  border-left: 3px solid var(--sage);
+  background: var(--cream);
+  font-size: 14px;
+  font-style: normal;
+  line-height: 1.8;
+  overflow-wrap: anywhere;
+}
+
+.bn-privacy-retention {
+  margin-bottom: 22px;
+}
+
+.bn-privacy-retention > div {
+  padding-block: 18px;
+  border-bottom: 1px solid var(--sage);
+}
+
+.bn-privacy-retention dt {
+  margin-bottom: 7px;
+  color: var(--deep-green);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.6;
+}
+
+.bn-privacy-help {
+  margin-top: 16px;
+  padding: 32px;
+  border-radius: 18px;
+  background: var(--sage);
+}
+
+.bn-privacy-help h2 {
+  margin: 14px 0;
+  font-family: var(--font-serif);
+  font-size: clamp(27px, 3vw, 34px);
+  font-weight: 400;
+  line-height: 1.25;
+}
+
+.bn-privacy-help > p:not(.bn-privacy-eyebrow) {
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.bn-privacy-help > a {
+  display: inline-block;
+  margin-top: 20px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.bn-privacy-index a:focus-visible,
+.bn-privacy-content a:focus-visible,
+.bn-privacy-skip:focus-visible {
+  outline: 2px solid var(--deep-green);
+  outline-offset: 5px;
+}
+
+.bn-privacy-skip {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 2000;
+  padding: 12px 18px;
+  background: var(--ivory);
+  color: var(--deep-green);
+  transform: translateY(-160%);
+}
+
+.bn-privacy-skip:focus {
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .bn-privacy-hero .bn-privacy-container {
+    animation: bnPrivacyIntro .65s ease-out both;
+  }
+
+  @keyframes bnPrivacyIntro {
+    from {
+      opacity: 0;
+      transform: translateY(12px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .bn-privacy-container {
+    width: calc(100% - 48px);
+  }
+
+  .bn-privacy-layout {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .bn-privacy-index {
+    padding: 24px;
+    border: 1px solid var(--sage);
+    border-radius: 16px;
+  }
+
+  .bn-privacy-index ol {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 28px;
+  }
+}
+
+@media (max-width: 600px) {
+  .bn-privacy-container {
+    width: calc(100% - 32px);
+  }
+
+  .bn-privacy-intro {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    padding-top: 22px;
+  }
+
+  .bn-privacy-updated time {
+    display: inline;
+    margin-left: 5px;
+  }
+
+  .bn-privacy-index {
+    padding: 22px 18px;
+  }
+
+  .bn-privacy-index ol {
+    grid-template-columns: 1fr;
+    gap: 13px;
+  }
+
+  .bn-privacy-section {
+    padding-block: 26px 30px;
+  }
+
+  .bn-privacy-contact {
+    padding: 18px;
+  }
+
+  .bn-privacy-help {
+    padding: 26px 22px;
+  }
+
+  .bn-privacy-layout {
+    padding-bottom: 50px;
   }
 }
