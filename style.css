@@ -10434,13 +10434,8 @@ a.bn-blog-read:focus-visible>span {
 }
 
   .bn-article-header {
-    padding-block: 28px 32px;
-  }
-
-  .bn-article-page #article-title {
-    font-size: clamp(30px, 8.5vw, 40px);
-    overflow-wrap: anywhere;
-  }
+  padding-block: 42px 48px;
+}
 
 .bn-article-breadcrumb {
   display: flex;
@@ -10726,6 +10721,15 @@ a.bn-blog-read:focus-visible>span {
   .bn-article-wide,
   .bn-article-layout {
     width: calc(100% - 32px);
+  }
+
+  .bn-article-header {
+    padding-block: 28px 32px;
+  }
+
+  .bn-article-page #article-title {
+    font-size: clamp(30px, 8.5vw, 40px);
+    overflow-wrap: anywhere;
   }
 
   .bn-article-header {
