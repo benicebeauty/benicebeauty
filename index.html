@@ -21,7 +21,13 @@
   <!-- Font Awesome – social icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-  <link rel="stylesheet" href="/style.css">
+  <link rel="preload"
+      href="/images/hero-woman.webp"
+      as="image"
+      type="image/webp"
+      fetchpriority="high">
+
+<link rel="stylesheet" href="/style.css">
   <!-- Structured data: website and beauty salon -->
   <script type="application/ld+json">
   {
@@ -272,7 +278,7 @@
           <a href="/treatments.html#facial" class="treatment-card reveal reveal-delay-1">
 
             <div class="treatment-image">
-              <img src="/images/facial-treatment.webp" alt="Facial treatments at Be Nice Beauty">
+              <img loading="lazy" decoding="async" src="/images/facial-treatment.webp" alt="Facial treatments at Be Nice Beauty">
             </div>
 
             <div class="treatment-info">
@@ -295,7 +301,7 @@
           <a href="/treatments.html#aesthetic" class="treatment-card reveal reveal-delay-2">
 
             <div class="treatment-image">
-              <img src="/images/aesthetic-treatment.webp" alt="Aesthetic skin treatment">
+              <img loading="lazy" decoding="async" src="/images/aesthetic-treatment.webp" alt="Aesthetic skin treatment">
             </div>
 
             <div class="treatment-info">
@@ -318,7 +324,7 @@
           <a href="/treatments.html#laser" class="treatment-card reveal reveal-delay-1">
 
             <div class="treatment-image">
-              <img src="/images/Laser-treatment.webp" alt="Laser Hair Removal treatment">
+              <img loading="lazy" decoding="async" src="/images/Laser-treatment.webp" alt="Laser Hair Removal treatment">
             </div>
 
             <div class="treatment-info">
@@ -341,7 +347,7 @@
           <a href="/treatments.html#waxing" class="treatment-card reveal reveal-delay-2">
 
             <div class="treatment-image">
-              <img src="/images/waxing-treatment.webp" alt="Waxing treatment">
+              <img loading="lazy" decoding="async" src="/images/waxing-treatment.webp" alt="Waxing treatment">
             </div>
 
             <div class="treatment-info">
@@ -384,7 +390,7 @@
 
         <!-- IMAGE – later -->
         <div class="about-image reveal-image">
-          <img src="/images/salon-room-interior.webp" alt="">
+          <img loading="lazy" decoding="async" src="/images/salon-room-interior.webp" alt="">
         </div>
 
 
@@ -470,7 +476,7 @@
         <article class="featured-item featured-item--one reveal">
 
           <div class="featured-image">
-            <img src="/images/deep-cleansing-with-manual-extraction.webp" alt="Facial treatment at Be Nice Beauty">
+            <img loading="lazy" decoding="async" src="/images/deep-cleansing-with-manual-extraction.webp" alt="Facial treatment at Be Nice Beauty">
           </div>
 
           <div class="featured-copy">
@@ -512,7 +518,7 @@
           </div>
 
           <div class="featured-image">
-            <img src="/images/microneedling-treatment.webp" alt="Aesthetic treatment at Be Nice Beauty">
+            <img loading="lazy" decoding="async" src="/images/microneedling-treatment.webp" alt="Aesthetic treatment at Be Nice Beauty">
           </div>
 
         </article>
@@ -522,7 +528,7 @@
         <article class="featured-item featured-item--three reveal">
 
           <div class="featured-image">
-            <img src="/images/hydrofacial.webp" alt="HydroFacial cleansing and hydration treatment">
+            <img loading="lazy" decoding="async" src="/images/hydrofacial.webp" alt="HydroFacial cleansing and hydration treatment">
           </div>
 
           <div class="featured-copy">
